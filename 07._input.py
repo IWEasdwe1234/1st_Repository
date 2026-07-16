@@ -100,3 +100,57 @@ print("=== 실습 숫자 입력받아 계산하기 ===")
 birth_year = int(input("태어난 해를 입력해주세요 ex)2001: "))
 age = 2026 - birth_year
 print("당신의 나이는:", "만", age, "세 입니다.")
+
+# =========================
+# float() - 실수로 작성된 문자열을 float으로 변환
+print("=== 형변환 - float ===")
+
+print(float(12.5))  # float()에 실수를 입력해도 동작 됨
+print(float("12.5"))
+print(float("12"))  # int 12를 float 12.0으로 변환
+
+# 사용자 입력값 float로 변환
+tall = float(input("키: "))
+print("tall:", tall, "tall의 자료형:", type(tall))
+
+# =========================
+print("=== 문자열로 변환 ===")
+
+year = int(input("태어난 연도: "))
+print("당신의 현재 나이는" + str(2026 - year + 1) + "세 입니다")
+# int와 str은 +(더하기 연산자)로 이어붙일 수 없음
+# 이럴 때 int를 str로 변환해서 더하기 연산자 사용 가능
+
+# =========================
+# 질문) 진동값을 입력받았을 때 출력하는 경우
+a = input("진동값: ")
+print("현재 입력받은 진동값은:" + a)
+# 값의 형태가 int나 float이어도 input으로 입력받은 경우 자료형은 무조건 str
+# 출력해서 +연산자 사용은 형변환 없이 가능
+# 하지만 실제로는 int나 float으로 입력받은 값을 str으로 ㅕㄴ환해서 려력ㄹ하는 경우가 많음
+
+# =========================
+
+# int, float, bool은 str로 변환 가능
+# b = str(123)  # "123"
+# c = str(123.4)  # "123.4"
+# d = str(True)  # "True"
+# e = int("str")  # Error, float도 동일
+# f = int(False)  # Error, float도 동일
+# # f = int(false) # Error, f가 소문자면 "변수"라고 인지를 하기 때문에 false라는 변수가 없어서 불가
+
+# =========================
+print("=== 실습 - 여러 개의 값 입력받기 ===")
+# 거주 국가와 도시 입력받아 출력하기
+nation = input("거주 국가 ex) 대한민국): ")
+city = input("거주 도시 ex) 서울): ")
+print("당신은 " + nation + "의 " + city + "에서 " + "거주하시는군요!")
+
+# =========================
+print("=== 실습 - 두 수 입력받아 사칙연산 ===")
+a = int(input("수1: "))
+b = int(input("수2: "))
+print("합:", a + b)
+print("차:", a - b)
+print("곱:", a * b)
+print("나눗셈:", a / b)
