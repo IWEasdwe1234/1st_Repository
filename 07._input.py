@@ -154,3 +154,21 @@ print("합:", a + b)
 print("차:", a - b)
 print("곱:", a * b)
 print("나눗셈:", a / b)
+
+# =========================
+print("=== 실습1 - 입력값 비교해 출력하기 ===")
+# 출력 결과 1 : 80초과
+# 출력 결과 2 : 0도 이상
+# 둘 모두 True 또는 False로 출력
+result1 = int(input("출력 결과 1 :"))
+result2 = int(input("출력 결과 2 :"))
+print("출력 결과 1 :", result1 > 80)  # True
+print("출력 결과 2 :", result2 >= 0)  # True
+
+# =========================
+print("=== 실습2 - 입력 변환 계산 비교 출력(종합) ===")
+# 기준: 60점 이상인지
+point1 = int(input("점수1: "))
+point2 = int(input("점수2: "))
+avg = (point1 + point2) / 2
+print("60점 이상?", avg >= 60)
