@@ -83,4 +83,12 @@ print(card)
 print("=== 인덱싱 ===")
 
 word = "PYTHON"
-print(word[0], word[3], word[5])
+print(word[0], word[3], word[5])  # P H N
+
+abc = "abcdefghijklmnopqrstuvwxyz"
+
+# 자기 이름 출력하기 (성 빼고)
+print(abc[19], abc[0], abc[4], abc[6], abc[20])
+
+# print(word[100]) # IndexError
+# word 변수에 저장된 문자열의 길이보다 큰 인덱스를 호출했기 때문
