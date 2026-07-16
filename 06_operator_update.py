@@ -84,3 +84,31 @@ print("정상" == "정상 ")  # False
 print("hello" != "hello")  # False
 print("hello" != "hello ")  # True
 print("hello" != "Hello")  # True
+
+# 변수에 문자열을 할당하고, 변수로 문자열 비교
+hello = "hi"
+print(hello == "hi")
+# 위 비교에서 hello는 따옴표로 감싸지지 않아서 "변수"로 취급
+# 만약 hello를 "hello"와 같이 따옴표로 감싸면
+# string으로 인식해서 변수 취급을 하지 않음
+# ex) "hello"와 "hi"를 비교하는 것
+
+# 변수로 비교연산자 사용
+num1 = 123
+num2 = 456
+
+print(num1 >= num2)  # False
+# print(num1 >= "num2")  # TypeError 발생
+# TypeError: '>=' not supported between instances of 'int' and 'str'
+
+# 질문 1) hello 변수에 할당하는 값을 따옴표로 감싸지 않고 비교
+print("=== 변수 hello(안녕)와 변수 hi(안녕)비교")
+# hello = hi
+# print(hello == hi) # NameError(선언하지 않은 이름 호출했을 때)
+# hi는 따옴표에 감싸져있지 않기 때문에 변수로 취도됨
+# 그런데 우리는 변수를 선언한 적이없기 떄문에 에러
+
+# 질문 1) 해결방법
+hi = "안녕"
+hello = hi  # print(hello) > 안녕
+print(hello)
