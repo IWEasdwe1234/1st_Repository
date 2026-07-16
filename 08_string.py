@@ -270,3 +270,13 @@ print("=== 실습 count()로 개수 세기 ===")
 # count(",")로 쉼표 개수 출력
 
 print("a, b, c, d".count(","))
+
+# =======================================
+print("=== find() ===")
+# 전달받은 글자가 "첫 번째로" 나오는 위치 인덱스 반환
+# 찾는 글자가 없다면 -1을 반환
+
+email = "hong@company.com"
+at = email.find("@")  # @ 위치에 인덱스인 4가 할당
+user_id = email[:at]  # hong이라는 사용자의 아이디만 추출
+print(user_id)  # hong
