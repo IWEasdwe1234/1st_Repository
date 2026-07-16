@@ -39,3 +39,12 @@ print(notice)
 
 # notice = "설비 점검 안내\n1. 전원 확인\n2. 센서 점검"
 print(notice)
+
+tap = "이름\t상태"
+print(tap)
+print("이름 상태")
+
+backslash = "이름\\상태"
+print(backslash)  # 이름\상태 > 첫 번째 \는 이스케이프 문자라는 것을 알리는 용도
+
+quotes = "It's me"  # 감싸는 따옴표와 str 내부 따옴표의 종류가 같을 때는 \를 사용
