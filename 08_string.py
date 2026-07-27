@@ -502,5 +502,55 @@ print("     정   상      ".strip())  # 정   상
 print(raw)  # "     정상          "
 # .stip()은 재할당이나 새 변수에 할당하지 않는 이상 휘발
 
+# strip으로 문자 제거
+print("\n\n=== strip으로 문자 제거 ===\n")
+
+str4 = "===정상==="
+print(str4.strip("="))  # 정상
+# 인자로 전달한 양끝의 =이 모두 지워짐
+
+str5 = "=정상=============="
+print(str5.strip("="))  # 정상
+# 갯수 상관 없이 인자로 전달한 문자를 무조건 삭제
+
+print(str5.strip("= "))  # 정상
+# strip 자체가 공백을 지우는 것이기 떄문에
+# 공백 상관없이 양 끝의 해당 문자열 삭제
+
+str6 = "==정==상===="
+print(str6.strip("="))  # 정==상
+# 글자 중간에 있는 문자열은 건드리지 않음
+
+
 # =======================================
-print("\n\n=== 실습7.앞뒤 공백 제거하기 ===\n")
+print("\n\n=== 체이닝 ===\n")
+
+# 체이닝 X
+raw = "  Normal   "
+step1 = raw.strip()  # "NORMAL"
+step2 = step1.strip()  # normal
+
+# 체이닝 X, 변수 재할당
+raw = "  Normal   "
+raw = raw.strip()  # "NORMAL"
+raw = raw.strip()  # normal
+
+# 체이닝 O *자주 사용*
+chain = raw.strip().lower()  # "normal"
+
+# 기존 변수에 재할당도 가능 *자주 사용*
+raw = raw.strip().lower()
+
+# 변수에 할당하지 않고 사용 가능
+print(raw.strip().lower())
+
+# =======================================
+print("\n\n=== 결과를 변수에 다시 저장하기 ===\n")
+
+# 조건
+#  - 체이닝이 가능하다면 무조건 체이닝
+#  - 값은 무조건 변수에 할당해서사용
+
+str = "   Warning   "
+print(str.lower())
+print(str.lower().strip())
