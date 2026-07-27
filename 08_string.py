@@ -705,3 +705,15 @@ print("\n\n=== 실습7.구분자 통째로 바꾸기 ===\n")
 
 td = "2026/07/27"
 print("-".join(td.split("/")))
+
+td_1 = td.split("/")
+print("-".join(td_1))
+
+
+# =======================================
+print("\n\n=== 실습8.CSV한 줄에서 값 꺼내 정리하기 ===\n")
+
+AA = "1, NORMAL ,25.3"
+A3 = AA.split(",")
+A4 = A3[1].strip().lower()
+print(A4)
