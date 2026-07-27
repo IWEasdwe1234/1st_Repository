@@ -626,3 +626,52 @@ num = "010-1234-1234"
 # ["010", "1234-1234"]
 print(num.split("-"))
 print(num.split("-", 1))
+
+
+# =======================================
+print("\n\n=== 실습 ===\n")
+
+word1 = "a,b,c,d"
+print(word1.split(","))
+
+# =======================================
+print("\n\n=== join() ===\n")
+# 리스트를 하나의 문자열로 합침
+# "구분자".join(리스트)
+# 모든 요소가 합쳐져서 하나의 문자열로 변환
+
+fruits_list = ["딸기", "거봉", "키위", "사쿠란보"]
+
+"-".join(fruits_list)  # "딸기-거봉-키위-사쿠란보"
+",".join(fruits_list)  # "딸기,거봉,키위,사쿠란보"
+", ".join(fruits_list)  # "딸기, 거봉, 키위, 사쿠란보"
+
+# =======================================
+print("\n\n=== 실습5.리스트 합치기 ===\n")
+
+d1 = "2025", "01", "15"
+print("-".join(d1))
+
+# =======================================
+print("\n\n=== 실습.pyThon 출력하기 ===\n")
+
+word2 = "python"
+# 방법 1. strip + capitalize
+print("py" + word2.strip("py").capitalize())
+print(word2[:2] + word2.strip(word2[:2]).capitalize())
+
+# 방법 2. replace
+print(word2.replace("t", "T"))
+
+# 방법 3. 슬라이싱 + T만 upper
+print(word2[:2] + word2[2].upper() + word2[3:])
+
+# 방법 4. 인덱싱으로 글자 하나씩 연결
+print(word2[0] + word2[1] + word2[2].upper() + word2[3] + word2[4] + word2[5])
+
+# 방법 5. 인덱싱 + strip + title
+print(word2[:2] + word2.strip("py").title())
+
+# 방법 6. split + join
+print(word2.split("t"))
+print(word2[2].upper().join(word2.split("t")))
