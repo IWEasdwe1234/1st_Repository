@@ -717,3 +717,13 @@ AA = "1, NORMAL ,25.3"
 A3 = AA.split(",")
 A4 = A3[1].strip().lower()
 print(A4)
+
+
+# =======================================
+print("\n\n=== f-string ===\n")
+
+N1 = "이름"
+age = 30
+print(f"{N1}님은 {age}살입니다")
+code = "EQP-001"
+print(f"설비 {code} 점검 완료")
