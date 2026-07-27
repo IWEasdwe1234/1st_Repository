@@ -553,4 +553,11 @@ print("\n\n=== 결과를 변수에 다시 저장하기 ===\n")
 
 str = "   Warning   "
 print(str.lower())
-print(str.lower().strip())
+print("[" + str.lower().strip() + "]")
+
+# strip() 메서드에 인자로 들어가는 문자열은 완전히 동일하지 않아도 전부 삭제가 됨
+str7 = "aaab 이렇게? cd"
+print(str7.strip("abcd"))  # 이렇게?
+print(str7.strip("abcd "))  # 이렇게?
+print(str7.strip("bc"))  # aaab 이렇게? cd
+print(str7.strip("ab"))  # 이렇게? cd
