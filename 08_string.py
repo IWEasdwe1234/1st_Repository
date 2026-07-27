@@ -371,3 +371,14 @@ print(
 )  # False
 print(str2.endswith("월요일입니다! 여러분은 할 수 있어요! "))  # False
 print(str2.endswith(" 월요일입니다! 여러분은 할 수 있어요!"))  # False
+
+
+# ======================================
+print("\n\n=== 실습 시작과 끝 확인하기 ===\n")
+
+ssr = "sensor)log.csv"
+print(ssr.startswith("sensor"))
+print(ssr.endswith(".csv"))
+
+
+# =======================================
