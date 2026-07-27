@@ -289,7 +289,7 @@ print(sqe_index)  # 0
 
 sqe_index = sqe.find("-")
 print(sqe_index)  # 3
-sqe_fin = sqe[sqe_index]  # sqe[0:3] > SQE
+sqe_fin = sqe[:sqe_index]  # sqe[0:3] > SQE
 print(sqe_fin)  # SQE
 
 # =======================================
@@ -306,6 +306,24 @@ print(email[:at])  # 시작 번호가 0이라면 start 생략 가능
 print(email[at:])  # 끝까지 출력하고 싶고, 뒤에 몇 글자가 있는지 모르니 생략
 # 위처럼 시작하면 5번 인덱스부터 출력하기 때문에 @을 포함
 print(email[at + 1 :])  # 끝까지 출력하고 싶고, 뒤에 몇 글자가 있는지 모르니 생략
+
+# find에서 했던 SQE 뽑아내기 실습 index 사용으로 바꾸기
+
+print(sqe_index)  # 0
+
+sqe_index = sqe.index("SQE")
+print(sqe_index)  # 0
+
+sqe_index = sqe.index("-")  # - 있으니 정상 동작
+print(sqe_index)  # 3
+sqe_fin = sqe[:sqe_index]  # sqe[0:3] > SQE
+print(sqe_fin)  # SQE
+
+# 만약에
+# sqe_index = sqe.index("-")  # / 없으니 Error 나고 중단
+# print(sqe_index)  # 3
+# sqe_fin = sqe[:sqe_index]  # sqe[0:3] > SQE
+# print(sqe_fin)  # SQE
 
 # =======================================
 print("\n\n=== count() ===\n")
