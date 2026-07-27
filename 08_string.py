@@ -339,3 +339,17 @@ print(str.count("a"))  # 3
 print(str.count(","))  # 6
 
 print(str.count(", "))  # 5 count로 찾는 문자열과 완전히 동일해야 갯수를 셈
+
+# =======================================
+print("\n\n=== startswith() ===\n")
+
+# 특정 문자열로 시작하는 검사
+# True/False (불리언)
+
+# EQP로 시작하는지 검사하기
+print("EQP-001".startswith("EQP"))
+
+# 변수 활용
+eqp = "EQP"
+print("EQP-001".startswith(eqp))
+# 주의사항) 변수명은 따옴표 감싸기 금지!!!!
