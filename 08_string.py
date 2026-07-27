@@ -353,3 +353,21 @@ print("EQP-001".startswith("EQP"))
 eqp = "EQP"
 print("EQP-001".startswith(eqp))
 # 주의사항) 변수명은 따옴표 감싸기 금지!!!!
+
+# =======================================
+print("\n\n=== endswith() ===\n")
+
+# 특정 문자열로 끝나는지 확인
+# Trur / False로 반환
+
+str2 = "월요일입니다! 여러분은 할 수 있어요!"
+
+print(str2.endswith("!"))  # True
+print(str2.endswith("요!"))  # True
+print(str2.endswith("음!"))  # False
+print(str2.endswith("월요일입니다! 여러분은 할 수 있어요!"))  # True
+print(
+    str2.endswith("월요일입니다!                     여러분은 할 수 있어요! ")
+)  # False
+print(str2.endswith("월요일입니다! 여러분은 할 수 있어요! "))  # False
+print(str2.endswith(" 월요일입니다! 여러분은 할 수 있어요!"))  # False
