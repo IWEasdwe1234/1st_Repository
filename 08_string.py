@@ -431,3 +431,76 @@ str3 = str3.upper()
 # 최초 변수 할당 시에는 저장된 값이 없어서
 # 변수 스스로 값을 불러와 할당 불가능
 # str4 = str4.upper()
+
+# =======================================
+print("\n\n=== 실습1.대문자로 바꾸기 ===\n")
+
+re = "ready"
+RE = re.upper()
+print(RE)
+
+# =======================================
+print("\n\n=== 실습2.소문자로 바꾸기 ===\n")
+
+wan = "WARNING"
+wa = wan.lower()
+print(wa)
+
+# =======================================
+print("\n\n=== 실습3.단어 첫 들자 대문자로 만들기 ===\n")
+
+user_name = "kim shul soo"
+
+# capitalize()는 문장 첫 글자만 대문자로 변환
+print(user_name.capitalize())  # Kim chul soo
+
+# title()은 띄어쓰기 기준으로 각 단어의 첫 글자들을 모두 대문자로 변환
+print(user_name.title())  # Kim Chul Soo
+
+# '를 사용한 경우 다른 단어로 인식
+print("I'm full".title())  # I'M Full
+print("I'm full".title())  # I'M Full
+
+# =======================================
+print("\n\n=== 실습4.대소문자 무시하고 비교하기 ===\n")
+
+w1 = "Fault"
+w2 = "FAULT"
+print(w1 == w2)
+print(w1.lower() == w2.lower())
+
+# =======================================
+print("\n\n=== 실습5.대소문자인지 소문자인지 검사하기 ===\n")
+
+print("ABC".isupper())
+print("abc".islower())
+print("Abc".isupper())
+
+# =======================================
+print("\n\n=== 실습6.파일명 규칙 한 번에 점검하기 ===\n")
+
+sn1 = "Sensor_LOG.CSV"
+ssn1 = sn1.lower()
+print(ssn1.startswith("sensor"))
+print(ssn1.endswith(".csv"))
+
+# =======================================
+print("\n\n=== .strip() ===\n")
+
+# 공백 제거
+# .strip() : 앞과 뒤의 모든 공백 제거 (중간 띄어쓰기는 그대로 유지)
+# .lstrip() : left(왼쪽) 공백만 제거
+# .rstrip() : right(오른쪽) 공백만 제거
+
+raw = "     정상          "
+print(raw.strip())  # "정상"
+print(raw.lstrip())  # "정상          "
+print(raw.rstrip())  # "     정상"
+
+# 문자열의 가운데 공백은 .strip()으로 지우지 못함
+print("     정   상      ".strip())  # 정   상
+print(raw)  # "     정상          "
+# .stip()은 재할당이나 새 변수에 할당하지 않는 이상 휘발
+
+# =======================================
+print("\n\n=== 실습7.앞뒤 공백 제거하기 ===\n")
