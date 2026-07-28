@@ -330,15 +330,15 @@ print("\n\n=== count() ===\n")
 
 # 문자열에서 특정 문자열의 갯수 세기
 
-str = "a, b, c, d, e,a, a"
+str1 = "a, b, c, d, e,a, a"
 
 # a의 갯수 세기
-print(str.count("a"))  # 3
+print(str1.count("a"))  # 3
 
 # ,의 갯수 세기
-print(str.count(","))  # 6
+print(str1.count(","))  # 6
 
-print(str.count(", "))  # 5 count로 찾는 문자열과 완전히 동일해야 갯수를 셈
+print(str1.count(", "))  # 5 count로 찾는 문자열과 완전히 동일해야 갯수를 셈
 
 # =======================================
 print("\n\n=== startswith() ===\n")
@@ -551,9 +551,9 @@ print("\n\n=== 결과를 변수에 다시 저장하기 ===\n")
 #  - 체이닝이 가능하다면 무조건 체이닝
 #  - 값은 무조건 변수에 할당해서사용
 
-str = "   Warning   "
-print(str.lower())
-print("[" + str.lower().strip() + "]")
+str1 = "   Warning   "
+print(str1.lower())
+print("[" + str1.lower().strip() + "]")
 
 # strip() 메서드에 인자로 들어가는 문자열은 완전히 동일하지 않아도 전부 삭제가 됨
 str7 = "aaab 이렇게? cd"
@@ -727,3 +727,53 @@ age = 30
 print(f"{N1}님은 {age}살입니다")
 code = "EQP-001"
 print(f"설비 {code} 점검 완료")
+
+print("\n\n== 실습1. f-string 변수 끼워 출력 ==\n")
+
+name = "PUMP_A"
+temp = 36
+
+# 출력 결과: 설비 PUMP_A, 온도 36도
+# 기존 방식
+print("설비" + name + ", 온도 ", str(temp))
+
+# f-string
+print(f"설비 {name}, 온도 {temp}도")
+
+# f-string 연산
+print("\n== f-string 연산 ==\n")
+hour = 8
+
+# 우리는 하루에 8시간 수업을 듣고, 이는 480분 입니다.
+print(f"우리는 하루에 {hour}시간 수업을 듣고, 이는 {hour*60}분 입니다.")
+
+
+# == 실습2. f-string 안에서 계산하기 ==
+print("\n\n== 실습2. f-string 안에서 계산하기 ==\n")
+
+r1 = 97
+r2 = 94
+r3 = 93
+
+print(f"3개 점수 평균 점수{(r1+r2+r3)/3}점")
+
+print(f"3개 점수 평균 점수{(r1+r2+r3)/3:.2f}점")
+
+# == 실습3. 소수점 자릿수 지정하기 ==
+print("\n\n== 실습3. 소수점 자릿수 지정하기 ==\n")
+
+A_1 = 87.456
+
+print(f"{A_1:.1f}")
+print(f"{A_1:.2f}")
+
+
+# == 실습4. 센서 로그 한 줄 정리 리포트 만들기 ==
+print("\n\n== 실습4. 센서 로그 한 줄 정리 리포트 만들기 ==\n")
+
+A1 = " 5, sensor_2, WARNING, 0.78912 "
+A2 = A1.strip().split(",")
+A2_1 = A2[1].strip()
+A2_2 = A2[2].strip().lower()
+A2_3 = float(A2[3].strip())
+print(f"[센서 {A2_1}] 상태 {A2_2}, 측정값 {A2_3:.2f}")
