@@ -321,3 +321,61 @@ print(lst)
 print(lst.pop(1))
 del lst[0]
 print(lst)
+
+
+# == 리스트 정렬하기 ==
+print("\n\n== 리스트 정렬하기 ==\n")
+
+# 리스트. sort()
+# 데이터를 정렬하는 친구
+# 기본적으로 오름차순(작은 숫자부터 큰 숫자까지)
+# 내림차순으로 정렬하고 싶은 경우에는 .sort(reverse=True)
+n = [37, 2, 8, 109, 1004, -1, 22]
+print("\nn 리스트 원본:", n)
+
+
+# 오름차순 정렬
+n.sort()  # 원본 리스트 수정
+print("n 리스트 오름차순 정렬 결과:", n)
+
+# 내림차순 정렬
+n.sort(reverse=True)
+print("n 리스트 내림차순 정렬 결과:", n)
+
+
+# 리스트 순서 뒤집기
+# .revers()
+# 값의 크기대로 정렬은 해주지 않음
+# 뒤로 계속쌓인 결과(최신)를 앞에서부터 보고싶을 때 사용
+
+n = [37, 2, 8, 109, 1004, -1, 22]
+print("\nn 리스트 원본:", n)
+
+n.reverse()
+print("n 리스트 순서 뒤집기 결과:", n)
+
+# 리스트 안 값의 갯수 구하기
+# .count(찾을값)
+
+f = ["텀블러", "일회용컵", "일회용컵", "텀블러", "텀블러", "일회용컵"]
+print(f.count("일회용컵"))
+print(f)  # 원본 배열에 변화 없음
+
+
+# 특정 값의 위치 찾기
+# .index(위치를찾을값)
+# 리스트에서 가장 첫 위치만 찾아줌
+print(f.index("일회용컵"))  # 1
+print(f)  # 원본 배열에 변화 없음
+
+
+# == 실습9. 정렬하고 탐색하기 ==
+print("\n\n== 실습9. 정렬하고 탐색하기 ==\n")
+
+temp_list = [28, 30, 24, 26, 22, 24, 27]
+temp_list.sort()
+print(temp_list)
+temp_list.reverse()
+print(temp_list)
+print(temp_list.count(24))
+print(temp_list.index(24))
