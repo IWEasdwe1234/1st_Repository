@@ -182,3 +182,45 @@ indx1 = temps_2.index(240)
 temps_2[indx1] = 24
 print(temps_2)
 print(240 in temps_2)
+
+
+# == 리스트 값 추가 ==
+print("\n\n== 리스트 값 추가 ==\n")
+
+# .append(추가할 값)
+# 리스트의 가장 마지막에 값을 추가
+
+nums1 = [1, 2, 3, 4, 5]
+
+nums1.append(999)
+print(nums1)
+
+# 만약 원본 리스트와 특정 값을 추가한 리스트 둘 다 필요하다면
+# 원본 리스트를 복사해서 리스트 수정 진행
+# nums1 [1, 2, 3, 4, 5] > 기존 리스트는 원본으로 둠
+new_nums1 = nums1  # 스스로의 메모리를 할당받지 않고, 메모리 주소만 복사
+print(new_nums1)
+
+new_nums1.append(111)
+print("원본 nums 리스트:", nums1)
+# 기대 결과 : [1, 2, 3, 4, 5, 999]
+# 실제 결과 : [1, 2, 3, 4, 5, 999, 111]
+# 복사한 메모리 주소에 append를 했기 때문에 원본까지 영향을 받음
+
+# 이를 해결하기 위해서 .coppy()라는 메서드를 사용
+#  new_nums2는 새로운 메모리에 nums 배열을 새로 저장
+new_nums2 = nums1.copy()
+new_nums2.append(222)  # nums 배열에 영향을 미치지 않고 사용
+print("원본 nums1 리스트:", nums1)
+print("복사본 new_nums2에 222 append 결과:", new_nums2)
+
+
+print("복사본 nums에 111 append 결과:", new_nums1)
+
+# .insert(위치, 값)
+# 리스트에서 원하는 위치에 값을 삽입
+# 원본 배열에 바로 삽입
+# 기존 배열에서 삭제는 되지 않고, 해당하는 인덱스 값이 삽입 (뒤에 요소들은 인덱스 +1)
+
+nums1.insert(3, 333)
+print(nums1)
