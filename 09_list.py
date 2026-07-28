@@ -1,0 +1,184 @@
+# == 리스트 ==
+print("== 리스트 ==\n")
+
+
+# list는 python의 자료형 중 하나
+# 여러 개의 값을 [대괄호]에 감싸서 순서대로 저장
+# 나열된 값들은 자동으로 각자의 인덱스 번호를 순서대로 가지게 됨
+
+temps = [35, 36, 37, 38]  # int 리스트
+float_temps = [36.4, 36.5, 36.6, 36.7]  # float 리스트
+machines = ["펌프", "압축기", "모터"]  # string 리스트
+
+# 자료형이 달라도 한 리스트에 담을 수 있음
+mixed = ["펌프", 78, True]
+
+# 리스트에 자동으로 순서 인덱스가 붙는다
+print(temps[2])  # 37 > 인덱스로 해당 순서에 위치한 요소 뽑아내기 가능
+
+# 리스트 안에 몇 개의 값이 담겼는지 모르지만 마지막 요소를 뽑고싶다면?
+print(temps[-1])  # 가장 마지막 요소 출력
+
+
+# == 빈 리스트 ==
+print("\n\n== 빈 리스트 ==\n")
+empty = []
+
+# 리스트에 담긴 값의 갯수 세기
+# len() 내장함수 사용
+print(len(temps))  # 4
+print(len(empty))  # 0
+
+# 리스트의 담긴 값의 갯수 변수에 저장
+temps_length = len(temps)  # 변수에 4라는 값이 할당
+print(temps_length)  # 4
+
+
+# == 실습1. 나만의 데이터 리스트 만들기 ==
+print("\n\n== 실습1. 나만의 데이터 리스트 만들기 ==\n")
+
+tmp1 = [30, 30, 29, 29, 28]
+print(tmp1)
+print(len(tmp1))
+
+tmp2 = []
+print(len(tmp2))
+
+# == 리스트의 인덱스 ==
+print("\n\n== 리스트의 인덱스 ==\n")
+
+print(temps[0], temps[-1])  # 가장 첫 번째 요소, 가장 마지막 요소
+# -1을 사용하는 이유는 최신 값은 대체로 뒤에 추가가 됨
+# 가장 최신 값은 결국 마지막 인덱스의 요소
+# len 함수를 사용해서 리스트 길이-1로 계산이 가능하지만
+# 이 작업이 번거로워 -1을 가장 많이 사용
+
+# 없는 인덱스 호출
+# temps 리스트는 길이가 5
+# print(temps[5]) # IndexError: list index out of range
+# 인덱스 범위를 벗어나지 않도록 유의
+
+
+# == 실습2. 인덱스로 값 꺼내기 ==
+print("\n\n== 실습2. 인덱스로 값 꺼내기 ==\n")
+temp3 = [22, 25, 27, 24, 26, 23]
+print(temp3[0])
+print(temp3[2])
+print(temp3[-1])
+
+
+# == 실습3.인덱스로 꺼낸 값 계산하기 ==
+print("\n\n== 실습3.인덱스로 꺼낸 값 계산하기 ==\n")
+
+line = [10, 20, 14, 23, 17, 30]
+line_1 = line[0]
+line_2 = line[-1]
+print(line_1 + line_2)
+print((line_1 + line_2) / 2)
+
+
+# == 리스트의 자료형 ==
+print("\n\n== 리스트의 자료형 ==\n")
+
+# temps라는 리스트 자체
+print(f"temps: {temps}")  # [35, 36, 37, 38]
+print(f"type(temps): {type(temps)}")  # <class 'list'>
+
+# temps라는 리스트의 0번째 인덱스 요소
+print(f"temps[0]: {temps[0]}")  # 35
+print(f"type(temps[0]): {type(temps[0])}")  # <class 'int'>
+
+# 다른 자료형의 값이 들어있는 리스트의 요소 타입
+# float 값이 들어있는 float_temps 리스트의 0번째 요소
+print(type(float_temps[0]))  # <class 'float'>
+print(type(machines[0]))  # <class 'str'>
+
+
+# == 퀴즈 ==
+print("\n\n== 퀴즈 ==\n")
+
+# mixed = ["펌프", 78, True]
+
+print(type(mixed[1]))
+print(type(mixed[-1]))
+print(type(mixed))
+
+
+# == 리스트의 슬라이싱 ==
+print("\n\n== 리스트의 슬라이싱 ==\n")
+# 리스트명[시작:끝:간격]
+# 시작, 끝, 간격 인덱스는 모두 생략 가능 (문자열과 동일)
+
+# temps = [35, 36, 37, 38]
+print(temps[1:3])  # [36, 37]
+print(temps[1:2])  # [36]
+print(temps[:2])  # [35, 36]
+print(temps[:2], temps[3:])  # [35, 36], [38]
+print(temps[::1])  # [35, 36, 37, 38]
+print(temps[::3])  # [35, 38]
+print(temps[100:999])  # [] > 슬라이싱은 없는 인덱스를 넣으면 빈 값을 반환
+
+# 인덱싱 vs 슬라이싱
+# 인덱싱 temps[0]은 값 하나(35)
+# temps[999]와 같이 없는 인덱스 사용 시 에러
+
+# 슬라이싱 temps[0:2]은 리스트([35, 36])
+# 슬라이싱은 영역을 잘라내는 역할이기 때문에 리스트를 반환하는 것
+# temps[100:999] 에러 발생하지 않음
+# 슬라이싱은 '있는 만큼만' 잘라주기 떄문에 에러 발생하지 않음
+
+
+# == 실습4. 슬라이싱으로 구간 자르기 ==
+print("\n\n== 실습4. 슬라이싱으로 구간 자르기 ==\n")
+
+temps_1 = [4, 3, 5, 1, 2, 2, 5, 6, 2, 0]
+print(temps_1[:3])
+print(temps_1[-3:])
+print(len(temps_1[:3]))
+
+
+# == 실습5. 데이터를 두 구간으로 나누기 ==
+print("\n\n== 실습5. 데이터를 두 구간으로 나누기 ==\n")
+
+datas = [3, 4, 5, 6, 5, 4, 6, 7, 8, 7, 5, 3]
+print(datas[:6])
+print(datas[6:])
+print(len(datas[:6]))
+print(len(datas[6:]))
+
+
+# == 인덱스로 특정 값 바꾸기 ==
+print("\n\n== 인덱스로 특정 값 바꾸기 ==\n")
+# 인덱스로 특정값 바꾸기 > 문자열과 다름
+# temps = [35, 36, 37, 38]
+
+print("원본:", temps)
+temps[2] = 999
+print("2번 인덱스 값 변경 결과: ", temps)
+
+
+# == in (존재 확인) ==
+print("\n\n== in (존재 확인) ==\n")
+
+# machines = ["펌프", "압축기", "모터"]
+
+print("펌프" in machines)  # True
+print("펌프" not in machines)  # False
+
+print("프레스" in machines)  # False
+
+# .index() 메서드는 리스트에서 가장 처음 등장하는 인덱스만 반환
+machines2 = ["펌프", "압축기", "모터", "압축기"]
+
+i2 = machines2.index("압축기")  # 1, 3번 인덱스 모두 값이 동일하지만
+print(i2)  # 1> 출력은 첫 번째로 1만 함
+
+# == 실습6. 값 찾아 바꾸기 ==
+print("\n\n== 실습6. 값 찾아 바꾸기 ==\n")
+
+temps_2 = [25, 26, 240, 28, 27]
+print(240 in temps_2)
+indx1 = temps_2.index(240)
+temps_2[indx1] = 24
+print(temps_2)
+print(240 in temps_2)
