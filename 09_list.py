@@ -252,8 +252,72 @@ print(datas.extend(new_data))  # None
 # =======================
 
 # 정리
-# 오늘 "꼭" 알아야 하는 리스트 수정 메서드와 개념
+# 오늘 "꼭" 알아야 하는 리스트 값 추가 메서드와 개념
 # .append(추가할값): 리스트의 가장 마지막에 값을 추가
 # .insert(위치, 값): 첫 번째 인자인 위치 인덱스에 값을 삽입
 # .extend(합칠리스트): 두 리스트를 하나의 리스트로 합체
 # 위 세 가지 메서드들은 원본 리스트 자체를 수정
+
+
+# == 실습7. 측정값 추가하기 ==
+print("\n\n== 실습7. 측정값 추가하기 ==\n")
+
+sample = []
+sample.append(30)
+print(sample)
+sample.insert(0, 28)
+print(sample)
+sample.extend([31, 32])
+print(sample)
+
+
+# == 리스트에서 요소 삭제 ==
+print("\n\n== 리스트에서 요소 삭제 ==\n")
+
+# .remove(값):  위치는 모르고 삭제할 "값"만 알 때 사용하는 요소 삭제 메서드
+list1 = ["딸기", "사과", "배", "포도", "수박", "망고"]
+list1.remove("수박")
+print(list1)
+
+print("\n\n========\n")
+
+# list1.remove("망고스틴") # ValueError: list.remove(x): x not in list
+
+# .pop(인덱스): 인덱스로 특정 요소를 삭제할 때 사용
+list1.pop(0)
+print(list1)  # pop 결과물 확인 용도
+
+# 없는 인덱스로 값 삭제 불가 > IndexError: pop index out of range
+# list1.pop(999)
+
+
+# pop 메서드는 삭제한 인덱스 값을 반환해준다는 것을 설명하는 용도
+print(list1.pop(2))  # 삭제한 인덱스 2번의 값인 포도를 출력
+# 삭제도 하고, 삭제한 인덱스 값도 출력
+print(list1)
+
+# del: 인덱스로 리스트의 요소 삭제 (슬라이싱으로 영역 삭제가능)
+del list1[0]
+print(list1)
+del list1[:]  # [] > 빈 리스트가 됨
+
+# del 건너뛰기
+list2 = ["빨강", "노랑", "초록", "파랑", "남색", "보라"]
+del list2[::2]  # "빨강", "초록", "남색"을 삭제하겠다는 의미
+print(list2)  # ['노랑', '파랑', '보라']
+
+# 없는 인덱스로 삭제
+# del list2[999]  # IndexError: list assignment index out of range
+del list2[100:300]  # 슬라이싱 할 값이 없기 떄문에 그대로 유지 > Error 나지 않음
+print(list2)
+
+
+# == 실습8. 잘못된 값 제거하기 ==
+print("\n\n== 실습8. 잘못된 값 제거하기 ==\n")
+
+lst = [25, 26, 24, 999, 28, 26]
+lst.remove(999)
+print(lst)
+print(lst.pop(1))
+del lst[0]
+print(lst)
