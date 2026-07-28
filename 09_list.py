@@ -224,3 +224,17 @@ print("복사본 nums에 111 append 결과:", new_nums1)
 
 nums1.insert(3, 333)
 print(nums1)
+
+
+# extend()
+# 리스트 연결
+# 다른 리스트의 값들을 "풀어서" 이어붙임
+data = [1, 2, 3]
+new_data = [7, 8, 9]
+
+print(data.extend(new_data))
+# 기대 결과 : [1, 2, 3, 7, 8, 9]
+# 실제 결과 : None
+# extend() 메서드는 data라는 리스트를 "수정" 이를 반환하지 않음
+# 반환값이 없어서 print를 할 값이 없는 것
+print(data)
