@@ -32,3 +32,40 @@ for n in temps:
         A += n
         B += 1
 print("고온 평균:", A / B)
+
+# --------------
+print("\n ------- ")
+# 기존 배열의 모든 요소에 3을 곱한 값을 리스트로 출력
+
+temps = [1, 5, 2, 7, 4, 8, 10, 3]
+doubled = []
+
+for t in temps:
+    doubled.append(t * 3)
+
+print(doubled)
+
+
+print("\n")
+
+# 조건에 맞는 값으로 세 리스트 만들기
+# temps = [1, 5, 2, 7, 4, 8, 10, 3]
+high = []
+low = []
+
+for t in temps:
+    if t < 5:
+        low.append(t)
+    else:
+        high.append(t)
+
+print("high: ", high)
+print("low: ", low)
+
+# 복습) sort(): 원본 배열을 오름차순으로 정렬해줌
+# 하지만 반환해주지 않기 때문에 print로 바로 찍으면 None 출력
+print(low.sort())  # None
+
+# 정렬된 배열을 출력하고 싶다면 아래처럼
+low.sort()
+print(low)
