@@ -128,3 +128,32 @@ for i in range(4):
     if v > max_value:
         max_value = v
 print("최댓값:", max_value)  # for 반복문 종료 후 최종 최댓값 출력
+
+# ========================
+
+print("\n==================")
+print("\n흐름 표를 보고 코드 작성")
+
+total = 0
+
+for i in [4, 7, 6]:
+    if i > 5:
+        total += i
+print("합계:", total)
+
+# ========================
+
+# 실습2. 플래그로 조건 만족 값 검색하기
+print("\n실습2. 플래그로 조건 만족 값 검색하기")
+
+num = int(input("횟수: "))
+fnd = False
+for i in range(n):
+    v = int(input("측정값: "))
+    if v > 80:
+        fnd = True
+        break
+if fnd:
+    print("발견")
+else:
+    print("없음")
