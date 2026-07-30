@@ -69,3 +69,16 @@ print(low.sort())  # None
 # 정렬된 배열을 출력하고 싶다면 아래처럼
 low.sort()
 print(low)
+
+
+# 실습4. 조건에 맞는 값으로 새 리스트 만들기
+print("\n실습4. 조건에 맞는 값으로 새 리스트 만들기")
+
+temps = [21, 32, 27, 35, 31, 26, 33]
+lst = []
+
+for n in temps:
+    if n > 30:
+        lst.append(n)
+print(lst)
+print(len("개수", lst))
