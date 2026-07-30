@@ -73,7 +73,6 @@ print(low)
 
 # 실습4. 조건에 맞는 값으로 새 리스트 만들기
 print("\n실습4. 조건에 맞는 값으로 새 리스트 만들기")
-
 temps = [21, 32, 27, 35, 31, 26, 33]
 lst = []
 
@@ -81,4 +80,16 @@ for n in temps:
     if n > 30:
         lst.append(n)
 print(lst)
-print(len("개수", lst))
+print("개수", len(lst))
+
+# ========================================
+
+# 실습5. 값을 가공해 새 리스트 만들기
+print("\n실습5. 값을 가공해 새 리스트 만들기")
+
+temps_C = [30, 32, 37, 40, 31]
+temps_F = []
+
+for t in temps_C:
+    temps_F.append(round(t * 1.8 + 32, 1))
+print(temps_F)
