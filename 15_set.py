@@ -79,3 +79,43 @@ alerts.add("S01")
 print(alerts)  # {'S02', 'S03', 'S01'}
 # S01이라는 값을 또 넣어도 무시하고 한 번만 저장
 # 그래서 독립적인 값을 저장하기에는 아주 편리함
+
+
+# =======================
+print("\n=================")
+
+# set에 특정 값 포함 여부 확인
+# ["S01", "S02", "S01", "S03", "S01"]
+# {"S01", "S02", "S03"}
+# 리스트와 셋을 비교해보면
+# set이 길이가 짧은 (중복을 제거하기 떄문에)
+# set은 인덱스가 없음
+# 순회 속도가 리스트보다 훨씬 빠름
+
+print('\n- "S01" in alerts -')
+print("S01" in alerts)  # True
+# 이렇게 출력하기보단 조건문을 활용해서
+# 포함 여부 확인 후 특정 동작을 실행시킴
+print("\n- 조건문 활용 -")
+if "S01" in alerts:
+    print("S01 정비 필요")
+
+
+# 질문) set을 정렬한다면?
+print("\n질문) set을 정렬한다면?")
+
+sorted_alerts = sorted(alerts)
+print(sorted_alerts)  # ['S01', 'S02', 'S03']
+print(type(sorted_alerts))  # <class 'list'>
+# 정렬을 한다는 것은 순서가 필수불가결하게 따라오는 개념
+# set을 정렬하면 리스트로 형이 변환됨
+
+
+# 실습4. 셋으로 중복 센서 제거하기
+print("\n실습4. 셋으로 중복 센서 제거하기")
+
+logs = ["WQR_01"] * 4 + ["WQR_06"] * 2 + ["WQR_03"] * 1 + ["WQR_05"] * 1
+unique = set(logs)
+
+print(sorted(unique))
+print("종류 수", len(unique))
