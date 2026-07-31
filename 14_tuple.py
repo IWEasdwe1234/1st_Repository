@@ -98,7 +98,7 @@ unpacking = (
 # unpacking = one, two, three
 # one two three라는 알 수 없는 변수를
 # unpaking 변수에 할당하겠다는 의미
-# 동작X
+# 동작 X
 
 one, two, three = unpacking
 # unpacking이라는 변수에 담긴 튜플 내부의 값들을
@@ -128,6 +128,7 @@ print("four:", four)
 
 
 # ==============================
+print("\n=======================\n")
 
 tup = (
     "normal",
@@ -147,4 +148,66 @@ print(tup.count("Warning"))  # 0
 # 특정 값이 처음 나온 인덱스 찾기
 print(tup.index("warning"))  # 2
 # 찾고자 하는 값이 없으면 Error 발생
-print(tup.index("Warning"))  # ValueError: tuple.index(x): x not in tuple
+# print(tup.index("Warning"))  # ValueError: tuple.index(x): x not in tuple
+
+
+# ==============================
+print("\n=======================\n")
+
+# 튜플 리스트
+# 리스트 안에 튜플을 담은 것을 표현
+# for문으로 리스트를 사용해서
+# 리스트 내부의 튜플에 접근하고
+# 튜플에 담긴 값을 사용할 수 있음
+
+# 언패킹을 사용해서 접근한 튜플 내부의 값을
+# 변수에 바로 할당해서 접근
+
+print("\n- 튜플 리스트 -\n")
+
+print('\nhour_13 = [("모터온도", 77),("모터진동", 0.2),("모터압력", 91),]\n')
+
+hour_13 = [
+    ("모터온도", 77),
+    ("모터진동", 0.2),
+    ("모터압력", 91),
+]
+
+now = 0
+
+for name, value in hour_13:
+    now += 1
+    print(now, "번째 반복")
+    print("name", name, "value", value)
+
+
+print("\n")
+print("\n- 설비 온도 -")
+
+temps_13 = [
+    ("qox_001", 81),
+    ("qox_001", 88),
+    ("qox_001", 95),
+    ("qox_001", 89),
+]
+
+Warning = 90
+
+for name, temp in temps_13:
+    if temp >= Warning:
+        print(name, "설비 온도 이상")
+
+print("\n")
+# 리스트 안의 튜플 값 갯수가 늘어나면
+# for문에서 변수를 여러개 작성하면 됨
+
+tup_list = [
+    ("일,", "one", 1, "1"),
+    ("이,", "two", 2, "2"),
+]
+
+# for문에서도 언패킹할 때는 무조건 튜플의 값 갯수와
+# for문의 변수 갯수 통일
+# 통일하지 않을 경우 Error 발생
+for kor_str, eng_str, num, num_str in tup_list:
+    print("kor_str", kor_str, "eng_str", eng_str, "num", num, "num_str", num_str)
