@@ -120,6 +120,7 @@ unique = set(logs)
 print(sorted(unique))
 print("종류 수", len(unique))
 
+print("\n")
 
 # =======================
 print("\n=================")
@@ -177,3 +178,38 @@ print(hour_15 - (hour_14))  # {'WQR_03', 'WQR_09'}
 # 차집합은 순서에 따라 결과가 다른 것을 유의
 # 14 - 15와 51 - 14는 다름
 # 빼는 방향에 따라 결과가 달라짐
+
+print("\n")
+
+# 실습5. 두 라인의 센서 구성 비교하기
+print("\n실습5. 두 라인의 센서 구성 비교하기")
+
+line_A = {"S01", "S02", "S03", "S05"}
+line_B = {"S03", "S04", "S05"}
+
+# 전체
+print("\n전체: ", end="")
+print(line_A.union(line_B))
+# 공통
+print("\n공통: ", end="")
+print(line_A.intersection(line_B))
+# A만
+print("\nA만: ", end="")
+print(line_A.difference(line_B))
+# B만
+print("\nB만: ", end="")
+print(line_B.difference(line_A))
+
+print("\n")
+
+# 실습6. 두 시점의 이벤트 센서 추적하기
+print("\n실습6. 두 시점의 이벤트 센서 추적하기")
+
+y = {"S01", "S02", "S03"}
+t = {"S02", "S03", "S05"}
+# 신규 이상
+print("\n신규 이상: ", end="")
+print(t.difference(y))
+# 지속 이상
+print("\n지속 이상: ", end="")
+print(t.intersection(y))
