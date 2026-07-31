@@ -125,3 +125,26 @@ print("two:", two)
 print("three:", three)
 print("four:", four)
 # 가능!
+
+
+# ==============================
+
+tup = (
+    "normal",
+    "normal",
+    "warning",
+    "normal",
+    "warning",
+)
+
+# 튜플의 길이
+print(len(tup))  # 5
+
+# 특정 값의 갯수 세기
+print(tup.count("warning"))  # 2
+print(tup.count("Warning"))  # 0
+
+# 특정 값이 처음 나온 인덱스 찾기
+print(tup.index("warning"))  # 2
+# 찾고자 하는 값이 없으면 Error 발생
+print(tup.index("Warning"))  # ValueError: tuple.index(x): x not in tuple
