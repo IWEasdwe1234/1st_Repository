@@ -186,9 +186,9 @@ print("\n- 설비 온도 -")
 
 temps_13 = [
     ("qox_001", 81),
-    ("qox_001", 88),
-    ("qox_001", 95),
-    ("qox_001", 89),
+    ("qox_002", 88),
+    ("qox_003", 95),
+    ("qox_004", 89),
 ]
 
 Warning = 90
@@ -211,3 +211,71 @@ tup_list = [
 # 통일하지 않을 경우 Error 발생
 for kor_str, eng_str, num, num_str in tup_list:
     print("kor_str", kor_str, "eng_str", eng_str, "num", num, "num_str", num_str)
+
+
+# ==============================
+
+print("\n튜플 리스트 정렬")
+# 튜플 리스트 정렬
+# sorted()를 사용하여
+# 튜플의 특정 값 기준으로 리스트를 정렬
+
+temps_13 = [
+    (81, "qox_001"),
+    (88, "qox_002"),
+    (95, "qox_003"),
+    (89, "qox_004"),
+]
+
+# sorted()는 원본 배열을 수정하지 않고
+# 새 리스트를 반환해줌
+hot = sorted(temps_13, reverse=True)
+print(hot)
+print("원본: ", temps_13)  # 정렬 적용 X
+
+
+# -- 실습1. 센서를 튜플로 묶고 꺼내기 --
+print("\n-- 실습1. 센서를 튜플로 묶고 꺼내기 --")
+
+temps_0 = ("모터온도", 78)
+print("\n① ", end="")
+print(temps_0[0])
+print("\n② ", end="")
+print(temps_0[1])
+print("\n③ ", end="")
+a, b = temps_0
+print(a, b)
+
+
+# -- 실습2. 튜플 리스트를 반복 처리하기 --
+print("\n-- 실습2. 튜플 리스트를 반복 처리하기 --")
+
+sensors = [
+    ("회전속도", 100),
+    ("펌프압력", 94),
+]
+print("\n① ")
+for a, b in sensors:
+    print(a, b)
+
+
+print("\n②, ③")
+wrn = 90
+for a, b in sensors:
+    if b > wrn:
+        print(a, "경고")
+
+
+# -- 실습3. 중첩 튜플로 센서 위치 관리하기 --
+print("\n-- 실습3. 중첩 튜플로 센서 위치 관리하기 --")
+
+sensors = [("모터온도", 80, (5, 4)), ("펌프압력", 87, (4, 8))]
+print("\n각 센서 이름")
+for a, b, c in sensors:
+    x, y = c
+    print(a, "위치:", x, y)
+print("\n5이하인 센서")
+for a, b, c in sensors:
+    x, y = c
+    if x <= 5:
+        print(a)
