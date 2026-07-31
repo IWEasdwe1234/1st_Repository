@@ -114,8 +114,66 @@ print(type(sorted_alerts))  # <class 'list'>
 # 실습4. 셋으로 중복 센서 제거하기
 print("\n실습4. 셋으로 중복 센서 제거하기")
 
-logs = ["WQR_01"] * 4 + ["WQR_06"] * 2 + ["WQR_03"] * 1 + ["WQR_05"] * 1
+logs = ["WQR_01", "WQR_01", "WQR_01", "WQR_01", "WQR_06", "WQR_06", "WQR_03", "WQR_05"]
 unique = set(logs)
 
 print(sorted(unique))
 print("종류 수", len(unique))
+
+
+# =======================
+print("\n=================")
+
+# 집합 연산
+print("\n-- 집합 연산 --")
+hour_14 = {"WQR_01", "WQR_06", "WQR_07", "WQR_02"}
+hour_15 = {"WQR_01", "WQR_07", "WQR_03", "WQR_09", "WQR_11"}
+
+# 합집합
+print("\n- 합집합 -")
+
+print("\n- .union()사용 -")
+
+print(hour_14.union(hour_15))
+print(hour_15.union(hour_14))  # 두 코드는 동일한 동작
+# {'WQR_01', 'WQR_02', 'WQR_03', 'WQR_06', 'WQR_07', 'WQR_09'}
+# 짧게 정리: 1, 2, 3, 6, 7, 9, 11
+
+print("\n- hour_14 출력 -")
+print(hour_14)  # .union은 원본 셋에 변화 X
+
+print("\n- | 기호 사용 -")
+
+print(hour_14 | hour_15)  # 연산자를 활용해 짧게 작성 가능
+
+# 교집합
+print("\n- 교집합 -")
+# union이랑 동일하게 두 코드는 똑같은 결과를 출력
+# 앞뒤 순서가 결과에 영향을 미치지 않음
+
+print(hour_14.intersection(hour_15))
+print(hour_15.intersection(hour_14))
+
+# & 연산자 사용 교집합
+print("\n- & 연산자 사용 -")
+print(hour_14 & (hour_15))
+
+# 3개의 print문은 공통으로 {'WQR_01', 'WQR_07'} 출력
+
+# 차집합
+print("\n- 차집합 -")
+# 순서에 따라 결과가 다름
+# 앞에 작성된 셋에서
+# difference의 인자로 전달된 셋에 있는 값들을
+# 제외한 결과를 출력
+
+print(hour_14.difference(hour_15))  # {'WQR_02', 'WQR_06'}
+print(hour_15.difference(hour_14))  # {'WQR_03', 'WQR_09'}
+
+# - 연산자 사용 차집합
+print("\n- - 연산자 사용 차집합 -")
+print(hour_14 - (hour_15))  # {'WQR_02', 'WQR_06'}
+print(hour_15 - (hour_14))  # {'WQR_03', 'WQR_09'}
+# 차집합은 순서에 따라 결과가 다른 것을 유의
+# 14 - 15와 51 - 14는 다름
+# 빼는 방향에 따라 결과가 달라짐
