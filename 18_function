@@ -123,4 +123,47 @@ def say_hello():
     print("안녕하세요")
 
 
+# 위에서 만든 함수는 이렇게 호출해야만 실행됩니다
 say_hello()
+
+
+# 함수 안에서 벌어지는 일들을 만들어 봅시다
+def show_number():
+    my_number = 44
+    print(f"my_number: {my_number}")
+
+
+# 위 함수를 실행해봅시다
+show_number()
+
+# 여기서도 my_number 값을 정해봅시다
+# 아랫줄의 my_number는 show_number함수 안의 my_number와 다른 존재
+my_number = 24
+show_number()
+
+# 그래서 함수안의 my_number 데이터가 영향을 끼치는 범위를
+# 전문용어로 스코프(scope)라고 부른다
+
+# 함수는 호출되기 전에 만들어져야 합니다
+# show_title() # NameError 발생
+
+
+def show_title():
+    print("함수 배우기")
+
+
+show_title()  # 정상 실행
+
+
+# ========================================
+print("\n" + "=" * 40 + "\n")
+print("실습1\n")
+
+
+# 실습1: 답안
+def start_Checking():
+    print("점섬을 시작합니다")
+
+
+start_Checking()
+start_Checking()
