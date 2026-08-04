@@ -111,3 +111,84 @@ report_keywords(temp=37.4, name="펌프A")
 
 # ========================================
 print("\n" + "=" * 40 + "\n")
+
+print("반환값의 이해\n")
+
+# 반환값
+
+
+def add(a, b):
+    total = a + b
+    return total
+
+
+print(add(1, 2))
+print(add(11, 224))
+print(add(13, 20))
+
+# 여러번 간ㅌ은 결과 호출해야한다면
+# 차라리 변수에 담아서 쓰세요
+result = add(1, 2)
+print(result + 1)
+print(result + 2)
+print(result + 3)
+
+# ========================================
+print("\n" + "=" * 40 + "\n")
+
+print("평균 내는 함수 만들기\n")
+
+
+# 평균 내는 함수 만들기
+def calc_average(a, b):
+    return (a + b) / 2
+
+
+avg = calc_average(75.3, 88.0)
+print(f"평균온도: {avg}")
+
+
+# ========================================
+print("\n" + "=" * 40 + "\n")
+
+# 여러 값을 한 번에 반환하기
+print("여러 값을 한 번에 반환하기\n")
+
+
+# 다음의 함수는 배열을 받아서 그 안의 최소값과 최대값을 동시에 return한다
+def calc_min_max(values):
+    minimum = min(values)  # 배열 안의 최소값 찾아 minimum에 담기
+    maximum = max(values)  # 배열 안의 최eo값 찾아 minimum에 담기
+    print(minimum, maximum)
+
+
+target_list = [1, 2, 3, 4, 5, 6]
+result = calc_min_max(target_list)
+print(result)  # 튜플인 것을 확인
+
+
+# ========================================
+print("\n" + "=" * 40 + "\n")
+
+print("반환값 언패킹으로 받기\n")
+# 반환값 언패킹으로 받기
+# 함수의 결과를 받는 순간에
+# 결과 튜플의 내용을 풀어서
+# 개발 변수에 담아 사용하기
+result_min, result_max = calc_min_max(target_list)
+print("최소값" + str(result_min))
+print("최대값" + str(result_max))
+
+
+# return 반환값이 없는 함수를 호출해놓고
+# 결과를 어디에 담겠다고 하면,
+# 담기는 값은 None이 된다.
+
+
+def saygreet():
+    print("만나서 반갑습니다")
+    return
+
+
+greet = saygreet()
+print(greet)  # None
