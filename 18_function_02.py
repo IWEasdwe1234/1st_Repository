@@ -92,3 +92,22 @@ report(35.2, "보일러C")
 
 # ========================================
 print("\n" + "=" * 40 + "\n")
+
+print("키워드 인자\n")
+
+
+def report_keywords(name, temp):
+    print(f"{name}의 {temp}는 75.3도입니다.")
+
+
+# 키워드 인자 사용해 호출
+report_keywords("펌프A", 37.4)
+report_keywords(37.4, "펌프A")
+
+# 키워드 인자 사용해 호출 : 순서 바꿔 흐촐해 생기는 문제 근본 차단
+report_keywords(name="펌프A", temp=37.4)
+report_keywords(temp=37.4, name="펌프A")
+
+
+# ========================================
+print("\n" + "=" * 40 + "\n")
