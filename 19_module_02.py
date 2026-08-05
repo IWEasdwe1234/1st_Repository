@@ -88,3 +88,18 @@ file_list = os.listdir()
 
 for file_name in file_list:
     print(file_name)
+
+# ========================================
+print("\n" + "=" * 40 + "\n")
+
+print("파일이 존재하는지 알아보기\n")
+
+# 파일이 존재하는지 알아봅시다
+# 운영체제(윈도우/맥/리눅스)마다 경로를 나타내는 방법이 달라서
+# 상황에 맞게 경로문자열을 만들어주는 os의 함수를 사용합시다
+path = os.path.join("data", "08_press.csv")
+
+# 실제로 경로문자열을 따라서 찾아가면
+# 해당 파일이 있는지 알아봅시다: True/False
+if os.path.exists(path):
+    print(f"파일 있음:{path}")
