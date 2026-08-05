@@ -47,6 +47,9 @@ print("[모듈 도움말 보기]\n")
 # help(math)
 
 
+# ========================================
+
+
 # 절대경로와 상대경로
 # 절대경로의 예 : C:\Users\asd123\바탕화면\sample\code.py
 # 만약 C:\Users\asd123\바탕화면\sample 폴더에 터미널을 연 상태에서
@@ -63,3 +66,14 @@ print("[모듈 도움말 보기]\n")
 # 만약 C:\Users\asd123\바탕화면\example 폴더 경로에서 위 코드를 실행하고 싶다면
 # 절대경로 : python C:\Users\asd123\바탕화면\sample\code.py
 # 상대경로 : python ..\sample\code.py
+
+# ========================================
+print("\n" + "=" * 40 + "\n")
+
+print("[os 모듈]\n")
+
+# 표준 라이브러리의 os 모듈 활용
+import os
+
+current_working_directory = os.getcwd()
+print(current_working_directory)
