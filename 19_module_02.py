@@ -77,3 +77,14 @@ import os
 
 current_working_directory = os.getcwd()
 print(current_working_directory)
+
+# ========================================
+print("\n" + "=" * 40 + "\n")
+
+print("[listdir 코드로 확인]\n")
+
+# 현재 작업디렉토리의 파일 목록 가져오기
+file_list = os.listdir()
+
+for file_name in file_list:
+    print(file_name)
