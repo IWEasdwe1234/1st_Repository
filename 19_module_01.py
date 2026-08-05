@@ -1,6 +1,8 @@
 # ========================================
 print("\n" + "=" * 40 + "\n")
 
+print("모듈과 import\n")
+
 # 수학 관련 모듈을 불러옵니다
 import math
 
@@ -40,3 +42,8 @@ import datetime as dt
 now = dt.datetime.now()
 print(now)  # 2026-08-05 11:23:14.000773
 print(type(now))  # <class 'datetime.datetime'>
+
+# ========================================
+print("\n" + "=" * 40 + "\n")
+
+print("표준 라이브러리\n")
