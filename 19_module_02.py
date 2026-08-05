@@ -1,6 +1,7 @@
 # ========================================
 print("\n" + "=" * 40 + "\n")
 
+print("[표준 라이브러리]\n")
 # math 표준 라이브러리
 import math
 
@@ -28,7 +29,7 @@ print(random.choice(["정상", "경고", "위험"]))  # 셋 중 무작위
 # ========================================
 print("\n" + "=" * 40 + "\n")
 
-print("[datetime 모듈]")
+print("[datetime 모듈]\n")
 
 # 표준 라이브러리의 datetime 모듈
 import datetime
