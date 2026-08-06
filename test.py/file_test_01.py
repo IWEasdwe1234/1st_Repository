@@ -1,8 +1,8 @@
 # ========================================
 print(f"\n{"=" * 40}\n")
 
-# 실습 open으로 파일을 열어 read, readlines로 내용을 읽기
-print("실습 open으로 파일을 열어 read, readlines로 내용을 읽기")
+# 실습1. open으로 파일을 열어 read, readlines로 내용을 읽기
+print("실습1. open으로 파일을 열어 read, readlines로 내용을 읽기")
 
 #   ① open으로 파일을 읽기 모드 r, utf-8로 열기
 
