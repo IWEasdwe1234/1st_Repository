@@ -29,6 +29,6 @@ with open("hello.txt", "w", encoding="utf-8") as f:
     # ③ with 블록이 끝나면 파일이 자동으로 닫힘
     # 정상적으로 닫힘
 
-# # ④ r 모드로 다시 열어 쓴 내용을 확인
+# ④ r 모드로 다시 열어 쓴 내용을 확인
 with open("hello.txt", "r", encoding="utf-8") as f:
     print(f.read())
