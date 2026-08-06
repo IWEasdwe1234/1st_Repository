@@ -1,3 +1,4 @@
+# ========================================
 print(f"\n{"=" * 40}\n")
 
 # 기본 내장함수인 open()으로 sample.txt 파일 열기
@@ -18,3 +19,25 @@ with open("data/sample.txt", "r", encoding="utf-8") as f:
 print(type(lines).__name__, len(lines))
 
 f.close()  # 열었다면 언젠가는 꼭 닫아줍시다
+
+print(f"\n{"=" * 40}\n")
+# ========================================
+
+# 쓰기모드(write)로 파일을 새롭게 만들어보겠습니다
+f = open("hello.txt", "w", encoding="utf-8")
+
+# 파일 쓰기에 줄바꿈을 포함하려면 \n을 포함시킨다
+f.write("안녕하세요\n")
+# 파일 쓰기에 탭들여쓰기를 포함하려면
+f.write("\t반갑습니다\n")
+
+f.close
+
+
+# 이어쓰기 모드(append)로 파일에 내용을 추가합시다
+f = open("hello.txt", "a", encoding="utf-8")
+
+f.write("맛점하세요\n")
+
+
+f.close
