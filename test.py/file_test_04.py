@@ -31,4 +31,4 @@ with open(csv_path, "r", encoding="utf-8") as f:
 
     # ④ for로 각 행(리스트)을 하나씩 꺼내 출력
     for row in reader:
-        print(row)
+        print(row[0])
