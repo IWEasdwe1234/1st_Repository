@@ -12,7 +12,7 @@ print("실습 3. 여러 파일 묶어 처리하기\n")
 # ========================================
 
 file_names = [
-    "08_press.cvs",
+    "08_press.csv",
     "09_ict.csv",
     "09_ict_dirty.csv",
     "10_dirty_dirty2",
@@ -27,5 +27,5 @@ for file_name in file_names:
 
         file.close()
 
-    except FileExistsError:
+    except FileNotFoundError:
         print(file_name, "파일을 찾을 수 없습니다.")
