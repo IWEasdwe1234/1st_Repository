@@ -1,20 +1,19 @@
 # ========================================
 print(f"\n{"="*40}\n")
 
-# 실습 4. 불량 방어
-print("실습 4. 불량 방어")
+# 실습 5. 리포트 저장
+print("실습 5. 리포트 저장")
 
 # 실습목표
-# · 불량 데이터를 걸러내고, 범위 밖 값은 raise 로 차단한다.
-# 앞서 배운 모든 예외처리 기법을 총동원한다.
+# · 분석 결과를 리포트 형식으로 정리해 txt 파일로 저장
+# 핵심 요약은 위, 세부 통계는 구분선 아래.
 
 # 만들어야 할 것
-# 온도를 처리하며 숫자로 못 바꾸는 값과 정상 범위를 벗어난 값을 모두 걸러낸다.
-# 불량 줄은 번호와 이유를 함께 기록한다.
+# 4단계까지의 결과를 리포트 형식으로 정리해 txt 파일에 저장
+# 저장 후 파일을 다시 열어 내용을 직접 확인
 
-# 한 함수에 모이는 것들
-# try-except · continue · raise · as e 가 한 함수에 모두 들어간다.
-# 앞서 배운 게 여기서 총정리된다.
+# 작성 방식
+# 리포트 줄들을 리스트에 차곡차곡 모은 뒤, 마지막에 반복문으로 한 번에 파일에 쓴다.
 
 # ========================================
 print(f"\n{"="*40}\n")
@@ -117,8 +116,8 @@ else:
     print("최솟값", minimum)
     print("최댓값", maximum)
 
-# ========================================
-print(f"\n{"="*40}\n")
+# ---------------------------------------
+print(f"\n{"-"*40}\n")
 print("[실습 4 - 불량 방어]\n")
 
 
@@ -153,3 +152,76 @@ print("\n불량 데이터 목록")
 
 for number, reason in bad_rows:
     print(f"{number}번째 행 : {reason}")
+
+# ========================================
+print(f"\n{"="*40}\n")
+print("[실습 5 - 리포트 저장]\n")
+
+# 리포트 내용 저장 리스트
+report_lines = []
+
+
+# 리포트 제목
+report_lines.append("센서 검사 리포트\n")
+report_lines.append("=" * 40 + "\n")
+
+
+# 핵심 요약
+report_lines.append("[핵심요약]\n")
+
+report_lines.append(f"전체 데이터 수 : {len(rows)}개\n")
+report_lines.append(f"불량 데이터 수 : {len(bad_rows)}개\n")
+
+# 구분선
+report_lines.append("\n" + "=" * 40 + "\n")
+
+
+# 측정값 통계
+report_lines.append("\n[측정값 통계]\n")
+
+if result is not None:
+    count, avg, minimum, maximum = result
+
+    report_lines.append(f"개수 : {count}\n")
+    report_lines.append(f"평균 : {round(avg, 2)}\n")
+    report_lines.append(f"최솟값 : {minimum}\n")
+    report_lines.append(f"최댓값 : {maximum}\n")
+else:
+    report_lines.append("계산할 데이터가 없습니다.\n")
+
+# 설비별 데이터 개수
+report_lines.append("\n[설비별 데이터 개수]\n")
+
+for equipment, data in equipment_data.items():
+    report_lines.append(f"{equipment} : {len(data)}개\n")
+
+
+# 불량 데이터 목록
+report_lines.append("\n[불량 데이터 목록]\n")
+
+for number, reason in bad_rows:
+    report_lines.append(f"{number}번째 행 : {reason}\n")
+
+
+# 리포트 저장
+import os
+
+os.makedirs("data", exist_ok=True)
+
+report_file = "data/inspection_report.txt"
+
+with open(report_file, "w", encoding="utf-8") as f:
+
+    for line in report_lines:
+        f.write(line)
+
+print("\n리포트 저장 완료:", report_file)
+
+
+# 저장된 리포트 확인
+print("\n저장된 리포트 내용\n")
+
+with open(report_file, "r", encoding="utf-8") as f:
+    report = f.read()
+
+print(report)
