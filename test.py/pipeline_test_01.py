@@ -4,6 +4,10 @@ print(f"\n{"="*40}\n")
 # 실습 1. CSV 읽기
 print("실습 1. CSV 읽기")
 
+# 실습목표
+# 센서 CSV를 안전하게 열어 헤더와 데이터를 분리한다.
+# 파일이 없어도 멈추지 않게 FileNotFoundError에 대비한다.
+
 # 만들어야 할 것
 # data/09_ict_inspection_dirty.csv 를 읽어 헤더와 데이터 행을 분리
 # 데이터가 몇 행인지 출력하는 함수를 만든다.
