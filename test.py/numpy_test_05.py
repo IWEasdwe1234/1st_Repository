@@ -1,12 +1,16 @@
-# 실습 5. 자료형 확인과 변환하기
+# == 실습 5. 자료형 확인과 변환하기 ==
+print("== 실습 5. 자료형 확인과 변환하기 ==")
 
 import numpy as np
 
-data = np.array([1234.232, 234123.23, 34523.234])
+# 소수점이 있는 측정값 배열 준비
+a = np.array([1.2, 3.4, 5.6])
+
 
 # dtype으로 현재 자료형 확인
-print(data.dtype)  # float64
+print(a.dtype)  # float64
+
 
 # astype으로 정수형으로 변환한 새 배열 출력
-converted_data = data.astype(int)
-print(converted_data)  # [  1234 234123  34523]
+int_a = a.astype(int)
+print(int_a)  # [1 3 5]
