@@ -10,8 +10,11 @@ import numpy as np
 rpm = np.loadtxt(
     "data/10_mct_tool.csv", delimiter=",", skiprows=1, usecols=4, encoding="utf -8"
 )
-print(rpm)
+
 # 불러온 배열의 평균과 표준편차 계산
 print(round(rpm.mean(), 1))  # 4212.6
+print(round(rpm.std(), 1))  # 1144.9
 
 # 최솟값과 최댓값으로 값의 범위 확인
+print(rpm.min(), rpm.max())  # 58.0 4987.0
+print(rpm.max() - rpm.min())  # 4929.0
