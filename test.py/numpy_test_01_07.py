@@ -1,4 +1,5 @@
-# 실습 7. 파일 데이터로 기초 통계 구하기
+# == 실습 7. 파일 데이터로 기초 통계 구하기 ==
+print("== 실습 7. 파일 데이터로 기초 통계 구하기 ==")
 
 # 목표
 # 파일로 저장된 공정 데이터를 불러와 기초 통계 계산
@@ -11,10 +12,12 @@ rpm = np.loadtxt(
     "data/10_mct_tool.csv", delimiter=",", skiprows=1, usecols=4, encoding="utf -8"
 )
 
+
 # 불러온 배열의 평균과 표준편차 계산
-print(round(rpm.mean(), 1))  # 4212.6
-print(round(rpm.std(), 1))  # 1144.9
+print(round(rpm.mean(), 1))
+print(round(rpm.std(), 1))
+
 
 # 최솟값과 최댓값으로 값의 범위 확인
-print(rpm.min(), rpm.max())  # 58.0 4987.0
-print(rpm.max() - rpm.min())  # 4929.0
+print(rpm.min(), rpm.max())
+print(rpm.max() - rpm.min())

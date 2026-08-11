@@ -1,25 +1,21 @@
-# 실습 6. 센서별 기초 통계 구하기
+# == 실습 6. 센서별 기초 통계 구하기 ==
+print("== 실습 6. 센서별 기초 통계 구하기 ==")
 
 # 목표
 # 표 모양 데이터에서 센서별(열별) 통계 계산
-# "axis(축) 옵션 문제"
 
 import numpy as np
 
 # 단계
 # 여러 설비의 회전수·토크 이차원 배열 준비
 data = np.array([[1551, 42.8], [1408, 46.3], [1498, 49.4], [2861, 4.6]])
-print(data)
-# [[1551.    42.8]
-#  [1408.    46.3]
-#  [1498.    49.4]
-#  [2861.     4.6]]
+
 
 # axis를 열 방향으로 지정해 센서별 평균 계산
-print(data.mean())  # 932.6375
-print(data.mean(axis=0))  # [1829.5     35.775]
-print(data.mean(axis=1))  # [ 796.9   727.15  773.7  1432.8 ]
+print(data.mean(axis=0))
+print(data.mean(axis=1))
+
 
 # 센서별 표준편차 계산
-print(data.std(axis=0))  # [597.72673522  18.1497073 ]
-print(np.round(data.std(axis=0), 2))  # [597.73  18.15]
+print(data.std(axis=0))
+print(np.round(data.std(axis=0), 2))
