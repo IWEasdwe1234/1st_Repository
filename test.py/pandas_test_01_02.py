@@ -18,5 +18,5 @@ print(df.head(10))
 print("\n[tail(7) 출력]")
 print(df.tail(7))
 
-print("\n[head(500) 출력]")
-print(df.head(500))
+print("\n[head(50) 출력]")
+print(df.head(50))

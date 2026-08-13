@@ -14,28 +14,28 @@ df = pd.read_csv("data/12_metro_digital.csv")
 print("\n[shape 출력]")
 print(df.shape)
 
+print("\n[head(4) 출력]")
+print(df.head(4))
+
+print("\n[tail(3) 출력]")
+print(df.tail(3))
+
 print("\n[head() 출력]")
 print(df.head())
 
-print("\n[tail() 출력]")
-print(df.tail())
-
-print("\n[head(10) 출력]")
-print(df.head(10))
-
-
+print(f"\n{"-"*40}\n")
 # metro_digital_sample.csv
-print("\n\n-- metro_digital_sample.csv --")
+print("\n-- metro_digital_sample.csv --")
 df = pd.read_csv("data/12_metro_small.csv")
 
 print("\n[shape 출력]")
 print(df.shape)
 
+print("\n[head(4) 출력]")
+print(df.head(4))
+
+print("\n[tail(3) 출력]")
+print(df.tail(3))
+
 print("\n[head() 출력]")
 print(df.head())
-
-print("\n[tail() 출력]")
-print(df.tail())
-
-print("\n[head(10) 출력]")
-print(df.head(10))
