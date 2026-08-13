@@ -14,7 +14,6 @@ df = pd.read_csv("data/13_diecasting_small.csv")
 print('\ndf.loc[0, "품질등급"] 출력\n')
 print(df.loc[0, "품질등급"])  # 양품
 
-
 # ----------------------------------------
 print(f"\n{"-" * 40}\n")
 
@@ -24,15 +23,14 @@ print(f"\n{"-" * 40}\n")
 print('df.iloc[0]["품질등급"] 출력\n')
 print(df.iloc[0]["품질등급"])  # 양품
 
-
 # ----------------------------------------
 print(f"\n{"-" * 40}\n")
 
 # 범위 선택으로 loc 끝 포함·iloc 끝 제외 차이 확인
 # 다음 두 줄의 결과는 각각 어떻게 나타나는지
 # 두 결과는 동일한지 아니면 다른지를 주석으로 달아주세요
-print("len(df.loc[0:2]) 출력")
+print("len(df.loc[0:2]) 출력\n")
 print(len(df.loc[0:2]))  # 3
 
-print("\nlen(df.iloc[0:2]) 출력")
+print("\nlen(df.iloc[0:2]) 출력\n")
 print(len(df.iloc[0:2]))  # 2

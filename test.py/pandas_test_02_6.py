@@ -10,7 +10,7 @@ df_shot = pd.read_csv("data/13_diecasting_shot.csv")
 # 단계
 # 여러 feature 열을 선택한 뒤 iloc로 앞 구간 추출
 cols = ["실린더압력", "주조압력", "사이클타임", "비스킷두께", "형체력"]
-print("df_shot[cols].iloc[0:10].shape 출력\n")
+print("\ndf_shot[cols].iloc[0:10].shape 출력\n")
 print(df_shot[cols].iloc[0:10].shape)  # (10, 5)
 
 # ----------------------------------------
