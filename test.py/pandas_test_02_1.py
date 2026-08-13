@@ -15,9 +15,13 @@ df_small = pd.read_csv("data/13_diecasting_small.csv")
 print("\n[df_small.head() 출력]\n")
 print(df_small.head())
 
+# --------------------
+print(f"\n{"-"*20}\n")
+
 print("\n[df_small.shape 출력]\n")
 print(df_small.shape)
 
+# ----------------------------------------
 print(f"\n{"-"*40}\n")
 
 # columns로 열 이름 목록 확인

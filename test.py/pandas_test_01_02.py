@@ -12,11 +12,20 @@ df = pd.read_csv("data/12_metro_compressor.csv")
 print("\n[head(1) 출력]")
 print(df.head(1))
 
+# ----------------------------------------
+print(f"\n{"-"*40}\n")
+
 print("\n[head(10) 출력]")
 print(df.head(10))
+
+# ----------------------------------------
+print(f"\n{"-"*40}\n")
 
 print("\n[tail(7) 출력]")
 print(df.tail(7))
 
-print("\n[head(50) 출력]")
-print(df.head(50))
+# ----------------------------------------
+print(f"\n{"-"*40}\n")
+
+print("\n[head(500) 출력]")
+print(df.head(500))

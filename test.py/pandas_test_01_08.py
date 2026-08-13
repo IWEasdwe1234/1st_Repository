@@ -12,17 +12,24 @@ import pandas as pd
 # shape, info, describe
 
 df_compressor = pd.read_csv("data/12_metro_compressor.csv")
-print("\ndf_compressor.shape 출력")
-print(df_compressor.shape)
-
-print()
-print()
+print("df_compressor.shape 출력\n")
+print(df_compressor.shape)  # (200, 7)
 
 print(f"\n{"-"*20}\n")
 
 df_digital = pd.read_csv("data/12_metro_digital.csv")
-print("\ndf_digital.shape 출력")
-print(df_digital.shape)
+print("df_digital.shape 출력\n")
+print(df_digital.shape)  # (120, 4)
 
-print()
-print()
+# ----------------------------------------
+print(f"\n{"-"*40}\n")
+
+df_compressor = pd.read_csv("data/12_metro_compressor.csv")
+print("df_compressor.shape 출력\n")
+print(df_compressor.shape)  # (200, 7)
+
+print(f"\n{"-"*20}\n")
+
+df_digital = pd.read_csv("data/12_metro_digital.csv")
+print("df_digital.shape 출력\n")
+print(df_digital.shape)  # (120, 4)

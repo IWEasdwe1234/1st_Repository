@@ -9,11 +9,17 @@ import pandas as pd
 
 df = pd.read_csv("data/12_metro_compressor.csv")
 
-print("\n[.columns 출력]")
+print("[.columns 출력]\n")
 print(df.columns)
 
-print("\n[.columns.tolist() 출력]")
+# ----------------------------------------
+print(f"\n{"-"*40}\n")
+
+print("[.columns.tolist() 출력]\n")
 print(df.columns.tolist())
 
-print("\n[dtypes 출력]")
+# ----------------------------------------
+print(f"\n{"-"*40}\n")
+
+print("[dtypes 출력]\n")
 print(df.dtypes)

@@ -11,31 +11,52 @@ import pandas as pd
 # 12_metro_digital.csv
 print("\n-- 12_metro_digital.csv --")
 df = pd.read_csv("data/12_metro_digital.csv")
+
 print("\n[shape 출력]")
-print(df.shape)
+print(df.shape)  # (120, 4)
+
+# --------------------
+print(f"\n{"-"*20}\n")
 
 print("\n[head(4) 출력]")
 print(df.head(4))
 
+# --------------------
+print(f"\n{"-"*20}\n")
+
 print("\n[tail(3) 출력]")
 print(df.tail(3))
+
+# --------------------
+print(f"\n{"-"*20}\n")
 
 print("\n[head() 출력]")
 print(df.head())
 
+# ----------------------------------------
 print(f"\n{"-"*40}\n")
+
 # metro_digital_sample.csv
 print("\n-- metro_digital_sample.csv --")
 df = pd.read_csv("data/12_metro_small.csv")
 
 print("\n[shape 출력]")
-print(df.shape)
+print(df.shape)  # (30, 7)
+
+# --------------------
+print(f"\n{"-"*20}\n")
 
 print("\n[head(4) 출력]")
 print(df.head(4))
 
+# --------------------
+print(f"\n{"-"*20}\n")
+
 print("\n[tail(3) 출력]")
 print(df.tail(3))
+
+# --------------------
+print(f"\n{"-"*20}\n")
 
 print("\n[head() 출력]")
 print(df.head())

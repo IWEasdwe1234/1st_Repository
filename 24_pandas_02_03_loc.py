@@ -1,16 +1,21 @@
-# 복수열 선택 선택
+# loc 행과 열
 
 import pandas as pd
 
 df = pd.read_csv("data/13_diecasting_small.csv")
-df.info()  # <class 'pandas.DataFrame'>
+df.info()
 
-# ----------------------------------------
-print(f"\n{"-" * 40}\n")
+print("-" * 40)
 
-df.loc[0].info()  # Series <class 'pandas.Series'>
+s = df.loc[0]
+s.info()  # Series
 
-# ----------------------------------------
-print(f"\n{"-" * 40}\n")
+# 행(row) 언급 서브 DF 만들기
+df_sub = df.loc[0:2]  # DataFrame
+df_sub.info()
+print(df_sub)
 
-df.loc[0:2].info()  # DataFrame <class 'pandas.DataFrame'>
+# 행(row)과 열(col) 언급 서브 DF 만들기
+df_sub2 = df.loc[0:2, ["품질등급", "형체력"]]
+df_sub2.info()
+print(df_sub2)

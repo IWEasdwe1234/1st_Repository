@@ -13,21 +13,24 @@ import pandas as pd
 # 설비 센서 데이터의 "한 열(1 colum)"을 묘사
 
 df = pd.read_csv("data/12_metro_compressor.csv")
-print("\n[df.info()] 실행\n")
+print("[df.info()] 실행\n")
 df.info()
 
+# --------------------
 print(f"\n{"-"*20}\n")
 
 # 오일온도 컬럼만 떼서 describe 통계 보기
 print('\ndf["오일온도"].info() 실행\n')
 df["오일온도"].info()
 
+# --------------------
 print(f"\n{"-"*20}\n")
 
-print('\ndf["오일온도"].describe()) 출력\n')
+print('df["오일온도"].describe()) 출력\n')
 print(df["오일온도"].describe())
 
+# --------------------
 print(f"\n{"-"*20}\n")
 
-# print('\n["df오일온도"] 출력')
-# print(df["오일온도"])
+print('["df오일온도"] 출력\n')
+print(df["오일온도"])
