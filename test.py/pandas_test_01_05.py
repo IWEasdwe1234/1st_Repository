@@ -9,8 +9,5 @@ import pandas as pd
 
 df = pd.read_csv("data/12_metro_digital.csv")
 
-print("[info() 출력]")
-print(df.info())
-
-while True:
-    print(f"\n{"살려줘\t" * 10}")
+print("[info() 실행]")
+df.info()
