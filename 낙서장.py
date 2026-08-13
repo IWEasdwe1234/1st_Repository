@@ -27,7 +27,12 @@ while True:
 
         # 터미널 화면 안에 있는 눈만 표시
         if s[1] < height and s[0] < width:
-            screen[s[1]][s[0]] = "❄️"
+            screen[s[1]][s[0]] = "💧"
+            # screen[s[1]][s[0]] = "🩸"
+            # screen[s[1]][s[0]] = "⚡"
+            # screen[s[1]][s[0]] = "🔥"
+            # screen[s[1]][s[0]] = "💮"
+            # screen[s[1]][s[0]] = "❄️"
 
     # 화면 출력
     for row in screen:
