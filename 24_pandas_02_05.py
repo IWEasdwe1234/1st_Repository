@@ -1,3 +1,5 @@
+print(f"\n{"= "*40}\n")
+
 # boolean Series
 import pandas as pd
 
@@ -32,6 +34,7 @@ print(df.describe())
 # 75%    22.750000  218.000000  1052.750000   21.375000  12.000000  258.000000
 # max    30.000000  265.000000  1137.000000  652.300000  21.000000  359.000000
 
+print(f"\n{"= "*40}\n")
 
 s = df["비스킷두께"]  # Serise
 s.info()
@@ -64,3 +67,27 @@ print(s.tail())
 # 28    11.0
 # 29     2.0
 # Name: 비스킷두께, dtype: float64
+
+print(f"\n{"= "*40}\n")
+
+# 비스킷두꼐 숫자들만 담긴 Serise에
+# 13 이상인지 따져보는 연산을 시킨다면
+# Boolean Serise 생성 : True 아니면 False만 담김
+s_boolean = s >= 13
+print(s_boolean.head())
+
+# 0    False
+# 1    False
+# 2     True
+# 3    False
+# 4     True
+# Name: 비스킷두께, dtype: bool
+
+# 위에서 생성된 Boolean Serise에서 True값들이 모두 몇개일까요?
+# 최초 CSV 파일에서 "비스킷두께" 컬럼의 값들중에 13 이상인 경우는 몇개인가?
+
+print(f"\n{"= "*40}\n")
+
+# Boolean Serise의 sum() 같은 통계를 낸다면
+# True = 1, False = 0 처리
+print(s_boolean.sum())
