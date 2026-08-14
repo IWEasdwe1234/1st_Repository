@@ -12,8 +12,9 @@ while True:
     width, height = os.get_terminal_size()
 
     # 새로운 눈 생성
-    if random.random() < 0.5:
-        snow.append([random.randint(0, width - 1), 0])
+    if random.random() < 0.9:
+        for _ in range(5):
+            snow.append([random.randint(0, width - 1), 0])
 
     # 화면 지우기
     os.system("cls")
