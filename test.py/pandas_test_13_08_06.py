@@ -12,10 +12,29 @@ print(f"\n{"~" * 30}\n")
 
 import pandas as pd
 
-df = pd.read_csv("data/13_diecasting_small.csv")
+df = pd.read_csv("data/13_diecasting_shot.csv")
 print("== df.info() 실행 ==\n")
 df.info()
+print(df.tail(5))
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 print(f"\n{"~" * 30}\n")
+
+
+# 단계
+# 고장 여부 조건으로 고장 설비만 먼저 거르기
+# 품질등급 == 불량
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+print(f"\n{"~" * 30}\n")
+
+# 거른 결과에 sort_values를 점으로 이어 비스킷두께 내림차순 정렬
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+print(f"\n{"~" * 30}\n")
+
+
+# head로 상위 다섯 개만 남겨 샷 확인
