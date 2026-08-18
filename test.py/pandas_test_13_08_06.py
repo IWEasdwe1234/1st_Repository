@@ -25,16 +25,27 @@ print(f"\n{"~" * 30}\n")
 # 단계
 # 고장 여부 조건으로 고장 설비만 먼저 거르기
 # 품질등급 == 불량
+print("== 고장 설비만 먼저 거르기 ==\n")
+df_bad = df[df["품질등급"] == "불량"]
+print(len(df_bad))  # 20
+print(df_bad.head(5))
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 print(f"\n{"~" * 30}\n")
 
 # 거른 결과에 sort_values를 점으로 이어 비스킷두께 내림차순 정렬
-
+print("== 비스킷두께 내림차순 정렬 ==\n")
+df_filtered = df[df["품질등급"] == "불량"].sort_values("비스킷두께", ascending=False)
+print(df_filtered)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 print(f"\n{"~" * 30}\n")
 
 
 # head로 상위 다섯 개만 남겨 샷 확인
+print("== 상위 다섯 개만 남겨 샷 확인 ==\n")
+df_filtered = (
+    df[df["품질등급"] == "불량"].sort_values("비스킷두께", ascending=False).head(5)
+)
+print(df_filtered)
