@@ -18,7 +18,7 @@ print(df.head(3))
 print(f"\n{"~" * 30}\n")
 
 # [문제 1] 이 학교의 전체 학생 수를 구하세요. (힌트: len 또는 shape)
-print("\n [문제 1] \n")
+print(" [문제 1] \n")
 print(len(df))  # 60
 print(df.shape)  # (60, 6)
 # 전체 학생 수 : 60
@@ -27,7 +27,7 @@ print(df.shape)  # (60, 6)
 print(f"\n{"~ " * 10}\n")
 
 # [문제 2] 학년별 학생 수를 구하세요. (힌트: groupby + count 또는 size)
-print("\n [문제 2] \n")
+print(" [문제 2] \n")
 print(df.groupby("학년").size())
 # 학년
 # 1    20
@@ -39,7 +39,7 @@ print(df.groupby("학년").size())
 print(f"\n{"~ " * 10}\n")
 
 # [문제 3] 학년 내 각 반별 학생 수를 구하세요. (힌트: 다중 컬럼 groupby)
-print("\n [문제 3] \n")
+print(" [문제 3] \n")
 print(df.groupby(["학년", "반"]).size())
 # 학년  반
 # 1   A    5
@@ -60,7 +60,7 @@ print(df.groupby(["학년", "반"]).size())
 print(f"\n{"~ " * 10}\n")
 
 # [문제 4] 각 반(학년, 반 조합)의 국어 점수 평균을 소수점 둘째 자리까지 구하세요.
-print("\n [문제 4] \n")
+print(" [문제 4] \n")
 print(df.groupby(["학년", "반"])["국어"].mean().round(2))
 # 학년  반
 # 1   A    76.8
@@ -80,7 +80,7 @@ print(df.groupby(["학년", "반"])["국어"].mean().round(2))
 print(f"\n{"~ " * 10}\n")
 
 # [문제 5] 각 학년의 영어 점수 평균을 소수점 둘째 자리까지 구하세요.
-print("\n [문제 5] \n")
+print(" [문제 5] \n")
 print(df.groupby("학년")["영어"].mean().round(2))
 # 학년
 # 1    64.80
@@ -91,7 +91,7 @@ print(df.groupby("학년")["영어"].mean().round(2))
 print(f"\n{"~ " * 10}\n")
 
 # [문제 6] 학교 전체의 수학 점수 평균을 소수점 둘째 자리까지 구하세요.
-print("\n [문제 6] \n")
+print(" [문제 6] \n")
 print(df["수학"].mean().round(2))
 # 68.95
 
