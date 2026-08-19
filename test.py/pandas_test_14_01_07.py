@@ -26,6 +26,7 @@ print(f"\n{"~" * 30}\n")
 # value_counts로 설비 구성과 정상·고장 비율 파악
 # 밸브상태별로 비율 확인 - 일단 각 상태별로 몇 건이 있는지 확인
 # group-size와 다르게 여기는 counts라서 결측(null값) 무시
+print("== 밸브상태별로 비율 확인 ==\n")
 print(df["밸브상태"].value_counts())
 # 밸브상태
 # 정상    61
@@ -33,9 +34,10 @@ print(df["밸브상태"].value_counts())
 # 경미    20
 # 심각    19
 
-# ~ ~ ~ ~ ~
-print(f"\n{"~ " * 5}\n")
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+print(f"\n{"~ " * 10}\n")
 
+print("== 밸브상태별로 비율 확인(normalize=True 사용) ==\n")
 print(df["밸브상태"].value_counts(normalize=True).round(3))
 # 밸브상태
 # 정상    0.508
@@ -48,48 +50,56 @@ print(f"\n{"~ " * 10}\n")
 
 # 고장 행만 걸러 라인별 고장 건수 집계
 # 다음 세가지 방법이 있다. 차이점은 잘 파악해주세요!
+print("== 고장 행만 걸러 라인별 고장 건수 집계(3가지 방법) ==\n")
+print("-- 1. print(len(df_bad)) --\n")
 df_bad = df[df["result"] == "고장"]
 print(len(df_bad))  # 53 -> 문제에 가장 부합!
 
-# ~ ~ ~ ~ ~
-print(f"\n{"~ " * 5}\n")
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+print(f"\n{"~ " * 10}\n")
 
+print('-- 2. print(df.groupby("result").size()) --\n')
 print(df.groupby("result").size())
 # result
 # 고장    53
 # 정상    67
 
-# ~ ~ ~ ~ ~
-print(f"\n{"~ " * 5}\n")
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+print(f"\n{"~ " * 10}\n")
 
+print('-- 3. print(df["result"].value_counts()) --\n')
 print(df["result"].value_counts())
 # result
 # 정상    67
 # 고장    53
 
-# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-print(f"\n{"~ " * 10}\n")
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+print(f"\n{"~" * 30}\n")
 
 # groupby로 설비별 온도·진동 평균까지 비교
+print("== groupby로 설비별 온도·진동 평균까지 비교 ==\n")
+print("-- 온도 평균 --\n")
 print(df.groupby("냉각기상태")["온도"].mean().round(2))
 # 냉각기상태
 # 고장    54.67
 # 저하    45.46
 # 정상    35.89
 
-# ~ ~ ~ ~ ~
-print(f"\n{"~ " * 5}\n")
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+print(f"\n{"~ " * 10}\n")
 
+print("-- 진동 평균 --\n")
 print(df.groupby("냉각기상태")["진동"].mean().round(2))
 # 냉각기상태
 # 고장    0.69
 # 저하    0.61
 # 정상    0.55
 
-# ~ ~ ~ ~ ~
-print(f"\n{"~ " * 5}\n")
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+print(f"\n{"~ " * 10}\n")
 
 # 각각처리하지 말고 한번에!
+print("-- 온도, 진동 평균 --\n")
 print(df.groupby("냉각기상태")[["온도", "진동"]].mean().round(2))
 #           온도    진동
 # 냉각기상태
