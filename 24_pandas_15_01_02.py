@@ -1,5 +1,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 print(f"\n{"~" * 30}\n")
+l = f"\n{"~ " * 10}\n"
+
 
 import pandas as pd
 
@@ -10,14 +12,30 @@ df = pd.read_csv(
 print(df.shape)  # (250, 22)
 
 # ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-print(f"\n{"~ " * 10}\n")
+print(l)
 
 df.info()
 
 # ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-print(f"\n{"~ " * 10}\n")
+print(l)
 
 print(df.describe())
+
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+print(l)
+
+print(df.isna().sum())
+
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+print(l)
+
+print(df.notna().sum())
+
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+print(l)
+
+# 각 컬럼별 NAN 갯수를 낸 Serise 대상으로 다시 합산을 시키면?
+# -> 전체 NaN 갯수
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 print(f"\n{"~" * 30}\n")
