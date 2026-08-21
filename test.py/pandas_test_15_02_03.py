@@ -13,13 +13,12 @@ print(ln)
 import pandas as pd
 
 df = pd.read_csv("data/15_02_사출성형_공정.csv", encoding="utf-8")
-print(df.shape)  # (250, 22)
+# print(df.shape)  # (250, 22)
 
 # 목표
 # 결측 비율이 높은 컬럼만 골라 제거
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-print(ln)
 
 # 단계
 # 컬럼별 결측 비율을 계산
