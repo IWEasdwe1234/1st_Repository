@@ -70,7 +70,7 @@ print(ln1 + "\n" + ln0 + "\n실습 7. duplicated로 중복 찾기와 개수\n" +
 # 단계
 # duplicated로 중복 행 여부를 참·거짓으로 표시
 print(ln1 + "\n==[ duplicated로 중복 행 여부를 참·거짓으로 표시 ]==\n")
-
+print(df.duplicated())
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -103,14 +103,14 @@ print(ln1 + "\n" + ln0 + "\n실습 8. drop_duplicates로 중복 제거\n" + ln0)
 # 단계
 # drop_duplicates로 완전 중복 행 제거
 print(ln1 + "\n==[ drop_duplicates로 완전 중복 행 제거 ]==\n")
+df_onlyone = df.drop_duplicates()
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # 제거 후 행 수와 남은 중복 개수 확인
 print(ln1 + "\n==[ 제거 후 행 수와 남은 중복 개수 확인 ]==\n")
-print(len(df))
-df_onlyone = df.drop_duplicates()
-print(len(df_onlyone))
+print(len(df))  # 제거 전
+print(len(df_onlyone))  # 제거 후
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -156,7 +156,9 @@ print(len(df_clean_idxreset))
 
 # 인덱스 최솟값·최댓값으로 연속성 확인
 print(ln1 + "\n==[ 인덱스 최솟값·최댓값으로 연속성 확인 ]==\n")
-
+print("인덱스 최솟값 :", df_clean_idxreset.index.min())
+print("인덱스 최댓값 :", df_clean_idxreset.index.max())
+print("데이터 개수 :", len(df_clean_idxreset))
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
