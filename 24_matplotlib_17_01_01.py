@@ -64,3 +64,8 @@ except Exception:
 print(f'✅ 환경 설정 완료! 현재 적용된 폰트: {plt.rcParams["font.family"]}')
 
 print(ln0)
+
+plt.plot([1, 2, 3], [10, 20, 15])
+plt.show()
+
+print(ln0)
