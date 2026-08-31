@@ -64,19 +64,39 @@ print(df.columns.tolist())  # ['tag', 'unit', 'sample_value', 'note']
 print(ln2)
 
 # 공정별로 몇 개의 태그가 있는지 세어보기
+split_cols = df["tag"].str.split("-", expand=True)
+df["plant"] = split_cols[0]
+df["process"] = split_cols[1]
+df["equip"] = split_cols[2]
+df["unit_no"] = split_cols[3]
+df["measure"] = split_cols[4]
 
-# 고로 :
-# 냉간압연 :
-# ....
+print(df.loc[0, "process"], df.loc[0, "measure"])
 
-df["process"] = df["tag"].str.split("-").str[1]
+print(ln2)
 
-# 공정 코드를 한글명으로 변경
-df["process"] = df["process"].replace(PROCESS_KR)
+df["process_kr"] = df["process"].map(PROCESS_KR)
+print(df[["tag", "process_kr"]].head(3))
 
-# 공정별 태그 개수
-process_count = df["process"].value_counts()
+print(ln2)
 
-print(process_count)
+print(df.groupby("process_kr").size())
+
+# 예시 결과
+# 고로 N
+# 냉간압연 M
+# .... (8행)
+
+
+# # 개인 실습 코드
+# df["process"] = df["tag"].str.split("-").str[1]
+
+# # 공정 코드를 한글명으로 변경
+# df["process"] = df["process"].replace(PROCESS_KR)
+
+# # 공정별 태그 개수
+# process_count = df["process"].value_counts()
+
+# print(process_count)
 
 print(ln1)
