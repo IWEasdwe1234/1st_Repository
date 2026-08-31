@@ -1,0 +1,82 @@
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ln1 = f"\n{"~" * 30}\n"
+ln2 = f"\n{"~ " * 10}\n"
+print(ln1)
+
+tag = "PL1-SNT-FAN-01-VIB"
+# 공장-공정-설비-일련번호-계측값
+
+parts = tag.split("-")
+print(parts)
+
+print(ln2)
+# "-"기준으로 나눈 결과 문자열을 변수에 따로 저장
+plant = parts[0]  # 공장
+process = parts[1]  # 공정
+equip = parts[2]  # 설비
+unit_no = parts[3]  # 일련번호
+measure = parts[4]  # 측정항목
+
+print(plant, process, equip, unit_no, measure)
+# PL1 SNT FAN 01 VIB
+
+print(ln2)
+
+PROCESS_KR = {
+    "SNT": "소결",
+    "CKO": "코크스",
+    "BF": "고로",
+    "BOF": "전로",
+    "CCM": "연주",
+    "HSM": "열간압연",
+    "CRM": "냉간압연",
+    "ULT": "유틸리티",
+}
+
+# 전로를 출력하려면?(BOF 키)
+print(PROCESS_KR["BOF"])
+
+# 없는 태글르 가져오는 것 방지
+print(PROCESS_KR.get("BOF1", "미등록"))
+
+print(ln2)
+
+MEASURE_KR = {
+    "VIB": "진동",
+    "CUR": "전류",
+    "TMP": "온도",
+    "PRS": "압력",
+    "FLW": "유량",
+    "SPD": "속도",
+    "LVL": "레벨",
+}
+
+print(MEASURE_KR.get("PRS", "미등록"))
+
+print(ln1)
+
+import pandas as pd
+
+df = pd.read_csv("data/01-01_철강_공정_개관_설비태그.csv")
+print(df.shape)  # (24, 4)
+print(df.columns.tolist())  # ['tag', 'unit', 'sample_value', 'note']
+
+print(ln2)
+
+# 공정별로 몇 개의 태그가 있는지 세어보기
+
+# 고로 :
+# 냉간압연 :
+# ....
+
+df["process"] = df["tag"].str.split("-").str[1]
+
+# 공정 코드를 한글명으로 변경
+df["process"] = df["process"].replace(PROCESS_KR)
+
+# 공정별 태그 개수
+process_count = df["process"].value_counts()
+
+print(process_count)
+
+print(ln1)
