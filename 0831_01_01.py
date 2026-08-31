@@ -100,3 +100,8 @@ print(df.groupby("process_kr").size())
 # print(process_count)
 
 print(ln1)
+
+# 실습1. 
+# 24개 태그를 읽어 공정과 상하공정 구분을 판정한 표 작성
+# 공정별로 묶어 태그가 가장 많은 공정 확인
+# 계측 항목별로 묶어 가장 많은 물리량 확인
