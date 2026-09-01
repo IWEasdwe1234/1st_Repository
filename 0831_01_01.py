@@ -226,7 +226,7 @@ print(ln1)
 
 # print(df.head())
 
-# # (문제 1번) 상공정, 하공정과 관련된 stage 컬럼 추가
+# # (문제 1번) 상공정, 하공정과 관련된 stage 컬럼 추가 
 # df["stage"]=df["process"].map(STAGE_KR).fillna("미등록")
 # print(df.head())
 
@@ -248,8 +248,8 @@ print(ln1)
 
 # ###### sort_values()의 kind옵션 - 어떤 정렬 알고리즘 사용할지 지정
 # # stable: 값이 같은 경우 기존 순서를 유지하는 정렬 (안정 정렬)
-# # quicksort: 퀵정렬 사용하여 정렬
-# # mergesort: 병합정렬 사용하여 정렬
+# # quicksort: 퀵정렬 사용하여 정렬 
+# # mergesort: 병합정렬 사용하여 정렬 
 # # heapsort: 힙정렬 사용하여 정렬
 # measure_b=df.groupby("measure_kr").size()
 # print(measure_b) # 정렬X
